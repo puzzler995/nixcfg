@@ -12,9 +12,14 @@
     
     #Helix Editor
     helix.url = "github:helix-editor/helix/master";
+
+    lix-module = {
+      url = "https://git.lix.systemc/lix-project/nixos-module/archive/2.93.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, lix-module, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -31,6 +36,8 @@
               users.kat = import ./home.nix;
             };
           }
+
+          lix-module.nixosModules.default
         ];
       };
     };
