@@ -19,27 +19,49 @@
     };
   };
   
-  outputs = { self, nixpkgs, home-manager, lix-module, ... }@inputs: {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
+  outputs = { self, ... }: let 
+    allSystems = [
+      "x86_64-linux"
+      "x86_64-darwin"
+      "aarch64-darwin"
+    ];
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
+    forAllSystems = f:
+      self.inputs.nixpkgs.lib.genAttrs allSystems (system: 
+      f {
+        pkgs = import self.inputs.nixpkgs {
+          inherit overlays system;
+          config.allowUnfree = true;
+        };
+      });
 
-              users.kat = import ./home.nix;
-            };
-          }
+      forAllLinuxHosts = self.inputs.nixpkgs.lib.genAttrs [
+        "gabbro"
+        "timberhearth"
+        "solarsystem"
+        "nixos-test"
+      ];
+  in {
+    nixosConfigurations = forAllLinuxHosts (
+      host:
+        self.inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/${host}
 
-          lix-module.nixosModules.default
-        ];
-      };
-    };
+            self.inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+
+                users.kat = import ./home.nix;
+              };
+            }
+
+            self.inputs.lix-module.nixosModules.default
+          ];
+        }
+    );
   };
 } 
