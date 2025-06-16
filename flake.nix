@@ -50,12 +50,13 @@
       users = ./modules/nixos/users;
     };
 
-    nixosConfigurations = forAllLinuxHosts (
-      host:
-        self.inputs.nixpkgs.lib.nixosSystem {
+    # nixosConfigurations = forAllLinuxHosts (
+    #   host:
+    nixosConfigurations = {
+        nixos = self.inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./hosts/${host}
+            ./hosts/nixos-test
 
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
@@ -69,7 +70,7 @@
             }
 
           ];
-        }
-    );
+        };
+    };
   };
 } 
