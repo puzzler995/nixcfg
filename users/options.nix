@@ -30,5 +30,5 @@
 
       root.enable = lib.mkEnableOption "root user configuration." // {default = true;};
       kat = mkUser "kat";
-    }
+    };
 }

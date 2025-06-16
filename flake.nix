@@ -41,7 +41,15 @@
         "solarsystem"
         "nixos-test"
       ];
+      overlays = [
+        self.overlays.default
+      ];
   in {
+    nixosModules = {
+      locale-en-us = ./modules/nixos/locale/en-us;
+      users = ./modules/nixos/users;
+    };
+
     nixosConfigurations = forAllLinuxHosts (
       host:
         self.inputs.nixpkgs.lib.nixosSystem {
@@ -50,16 +58,16 @@
             ./hosts/${host}
 
             self.inputs.home-manager.nixosModules.home-manager
+            self.inputs.lix-module.nixosModules.default
+            self.nixosModules.users
+
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-
-                users.kat = import ./home.nix;
               };
             }
 
-            self.inputs.lix-module.nixosModules.default
           ];
         }
     );

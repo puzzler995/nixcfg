@@ -1,7 +1,12 @@
-{ config, lib, pkgs, self, ...}: 
+{ config, pkgs, ...}: 
 {
   users.users.kat = {
     description = "Katherine Marsee";
-    extraGroups
-  }
+    extraGroups = config.userManager.defaultGroups;
+    hashedPassword = config.userManager.kat.password;
+    isNormalUser = true;
+
+    shell = pkgs.zsh;
+    uid = 1000;
+  };
 }
