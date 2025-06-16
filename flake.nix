@@ -17,6 +17,11 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    alejandra = {
+      url = "github:kamadorueda/alejandra/4.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = { self, ... }: let 
@@ -53,7 +58,7 @@
     # nixosConfigurations = forAllLinuxHosts (
     #   host:
     nixosConfigurations = {
-        nixos = self.inputs.nixpkgs.lib.nixosSystem {
+        nixos-test = self.inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/nixos-test
@@ -72,5 +77,7 @@
           ];
         };
     };
+
+    overlays.default = import ./overlays/default.nix {inherit self;};
   };
 } 
