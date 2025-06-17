@@ -1,5 +1,5 @@
 {
-  description = "A simple NixOS flake";
+  description = "Kat's Homelab and Device flake";
   
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -55,6 +55,11 @@
     nixosModules = {
       disko-btrfs-subvolumes = ./modules/nixos/disko/btrfs-subvolumes;
       disko-btrfs-subvolumes-with-swap = ./modules/nixos/disko/btrfs-subvolumes-with-swap;
+      hardware-amd-cpu = ./modules/nixos/hardware/amd/cpu;
+      hardware-common = ./modules/nixos/hardware/common;
+      hardware-corsair-keyboard = ./modules/nixos/hardware/corsair/keyboard;
+      hardware-nvidia-gpu = ./modules/nixos/hardware/nvidia/gpu;
+      hardware-utechvenus-mouse = ./modules/nixos/hardware/utechvenus/mouse;
       locale-en-us = ./modules/nixos/locale/en-us;
       users = ./modules/nixos/users;
     };
