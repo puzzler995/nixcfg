@@ -4,22 +4,24 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
-    #home-manager
+    # Nix Formatter
+    alejandra = {
+      url = "github:kamadorueda/alejandra/4.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    #Helix Editor
-    helix.url = "github:helix-editor/helix/master";
 
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    alejandra = {
-      url = "github:kamadorueda/alejandra/4.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -51,18 +53,38 @@
       ];
   in {
     nixosModules = {
+      disko-btrfs-subvolumes = ./modules/nixos/disko/btrfs-subvolumes;
+      disko-btrfs-subvolumes-with-swap = ./modules/nixos/disko/btrfs-subvolumes-with-swap;
       locale-en-us = ./modules/nixos/locale/en-us;
       users = ./modules/nixos/users;
     };
-
-    # nixosConfigurations = forAllLinuxHosts (
-    #   host:
     nixosConfigurations = {
         nixos-test = self.inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/nixos-test
 
+            self.inputs.disko.nixosModules.disko
+            self.inputs.home-manager.nixosModules.home-manager
+            self.inputs.lix-module.nixosModules.default
+            self.nixosModules.users
+
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+              };
+            }
+
+          ];
+        };
+        timberhearth = self.inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+
+          modules = [
+            ./hosts/timberhearth
+
+            self.inputs.disko.nixosModules.disko
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
             self.nixosModules.users
