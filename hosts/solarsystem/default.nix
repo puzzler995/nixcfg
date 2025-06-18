@@ -21,7 +21,12 @@
   system.stateVersion = "25.05";
   time.timeZone = "America/New_York";
 
-  userManager.kat.enable = true;
+  userManager = {
+    kat = {
+      enable = true;
+      password = "$y$j9T$fXCNJ5L3S4.VfMhNbw3V31$n8k8chfUm8pKn5rbscHhbpDhvcq7JZJNxF9MMDfXUB3";
+    }
+  };
 
   nixOSManager = {
     profiles = {
