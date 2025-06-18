@@ -1,4 +1,4 @@
-{...}: {
+{config, lib, pkgs, self, ...}: {
   options.nixOSManager.profiles.common.enable = lib.mkEnableOption "Common System Config Profile.";
 
   config = lib.mkIf config.nixOSManager.profiles.common.enable {
