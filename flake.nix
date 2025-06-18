@@ -100,6 +100,7 @@
             self.inputs.disko.nixosModules.disko
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
+            self.nixosModules.nixos
             self.nixosModules.users
 
             {
