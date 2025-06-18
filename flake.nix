@@ -88,6 +88,13 @@
         };
         solarsystem = self.inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+
+          specialArgs = {
+            flake = {
+              nixosModules = self.nixosModules;
+            };
+          };
+
           modules = [
             ./hosts/solarsystem
             self.inputs.disko.nixosModules.disko

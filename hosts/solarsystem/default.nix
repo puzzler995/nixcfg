@@ -1,12 +1,12 @@
-{self, ...
+{flake, ...
 }: {
   imports = [
     ./configuration.nix
 
-    self.nixosModules.disko-ext4
-    self.nixosModules.hardware-common
-    self.nixosModules.hardware-intel-cpu
-    self.nixosModules.locale-en-us
+    flake.nixosModules.disko-ext4
+    flake.nixosModules.hardware-common
+    flake.nixosModules.hardware-intel-cpu
+    flake.nixosModules.locale-en-us
   ];
 
   boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ata_piix" "megaraid_sas" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
