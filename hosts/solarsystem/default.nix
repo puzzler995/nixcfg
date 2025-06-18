@@ -34,6 +34,7 @@
     };
 
     programs = {
+      nix.enable = true;
       systemd-boot.enable = true;
     };
   };
