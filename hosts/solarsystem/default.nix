@@ -25,7 +25,7 @@
 
   nixOSManager = {
     profiles = {
-      base.enable = true;
+      common.enable = true;
     };
 
     programs = {
