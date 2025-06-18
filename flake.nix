@@ -112,7 +112,7 @@
               nixpkgs = {
                 inherit overlays;
                 config.allowUnfree = true;
-              }
+              };
             }
           ];
         };
