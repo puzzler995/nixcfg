@@ -1,0 +1,5 @@
+{...}: {
+  import = [
+    ./systemd-boot
+  ];
+}

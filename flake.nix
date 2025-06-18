@@ -55,12 +55,15 @@
     nixosModules = {
       disko-btrfs-subvolumes = ./modules/nixos/disko/btrfs-subvolumes;
       disko-btrfs-subvolumes-with-swap = ./modules/nixos/disko/btrfs-subvolumes-with-swap;
+      disko-ext4 = ./modules/nixos/disko/ext4;
       hardware-amd-cpu = ./modules/nixos/hardware/amd/cpu;
       hardware-common = ./modules/nixos/hardware/common;
       hardware-corsair-keyboard = ./modules/nixos/hardware/corsair/keyboard;
+      hardware-intel-cpu = ./modules/nixos/hardware/intel/cpu;
       hardware-nvidia-gpu = ./modules/nixos/hardware/nvidia/gpu;
       hardware-utechvenus-mouse = ./modules/nixos/hardware/utechvenus/mouse;
       locale-en-us = ./modules/nixos/locale/en-us;
+      nixos = ./modules/nixos/os;
       users = ./modules/nixos/users;
     };
     nixosConfigurations = {
@@ -81,6 +84,23 @@
               };
             }
 
+          ];
+        };
+        solarsystem = self.inputs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/solarsystem
+            self.inputs.disko.nixosModules.disko
+            self.inputs.home-manager.nixosModules.home-manager
+            self.inputs.lix-module.nixosModules.default
+            self.nixosModules.users
+
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+              };
+            }
           ];
         };
         timberhearth = self.inputs.nixpkgs.lib.nixosSystem {
