@@ -18,8 +18,8 @@
       ];
 
       variables = {
-        FLAKE = lib.mkDefault "git+https://github.com/puzzler995/nixcfg.git"
-        NH_FLAKE = lib.mkDefault "git+https://github.com/puzzler995/nixcfg.git"
+        FLAKE = lib.mkDefault "git+https://github.com/puzzler995/nixcfg.git";
+        NH_FLAKE = lib.mkDefault "git+https://github.com/puzzler995/nixcfg.git";
       };
     };
 
