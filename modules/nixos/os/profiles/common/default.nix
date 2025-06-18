@@ -79,6 +79,5 @@
       configurationRevision = self.rev or self.dirtyRev or null;
       rebuild.enableNg = true;
     };
-    allowUnfree = true;
   };
 }

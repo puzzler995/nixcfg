@@ -108,6 +108,11 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
               };
+
+              nixpkgs = {
+                inherit overlays;
+                config.allowUnfree = true;
+              }
             }
           ];
         };
