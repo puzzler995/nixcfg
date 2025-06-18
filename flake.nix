@@ -86,7 +86,7 @@
 
           ];
         };
-        solarsystem = self.inputs.lib.nixosSystem {
+        solarsystem = self.inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/solarsystem
