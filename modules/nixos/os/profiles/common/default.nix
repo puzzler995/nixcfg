@@ -76,7 +76,8 @@
 
     };
     system = {
-      configurationRevision = self.rev or self.dirtyRev or null;
+      #configurationRevision = self.rev or self.dirtyRev or null;
+      configurationRevision = null;
       rebuild.enableNg = true;
     };
   };
