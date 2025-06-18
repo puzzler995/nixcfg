@@ -30,6 +30,6 @@
 
     programs = {
       systemd-boot.enable = true;
-    }
+    };
   };
 }
