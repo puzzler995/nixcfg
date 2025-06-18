@@ -25,7 +25,7 @@
     kat = {
       enable = true;
       password = "$y$j9T$fXCNJ5L3S4.VfMhNbw3V31$n8k8chfUm8pKn5rbscHhbpDhvcq7JZJNxF9MMDfXUB3";
-    }
+    };
   };
 
   nixOSManager = {
