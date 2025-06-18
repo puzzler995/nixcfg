@@ -1,4 +1,4 @@
-{config, self, lib, ...
+{self, ...
 }: {
   imports = [
     ./configuration.nix
@@ -15,7 +15,7 @@
 
   networking = {
     hostName = "solarsystem";
-    useDHCP = lib.mkDefault true;
+    useDHCP = true;
   };
 
   system.stateVersion = "25.05";
