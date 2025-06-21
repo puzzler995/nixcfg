@@ -16,7 +16,6 @@
     lsd
 
     mas
-    ghostty
   ];
 
   homebrew = {
@@ -29,7 +28,7 @@
         greedy = true;
       };
       in [
-        # (greedy "ghostty")
+        (greedy "ghostty")
       ];
 
     onActivation = {
@@ -48,14 +47,12 @@
 
   nix-homebrew = {
     enable = true;
-    # mutableTaps = false;
+    mutableTaps = false;
 
     taps = {
       "homebrew/homebrew-core" = self.inputs.homebrew-core;
       "homebrew/homebrew-cask" = self.inputs.homebrew-cask;
     };
-
-    autoMigrate = true;
 
     user = "kat";
   };
