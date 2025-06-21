@@ -16,6 +16,7 @@
     lsd
 
     mas
+    ghostty
   ];
 
   homebrew = {
@@ -28,7 +29,7 @@
         greedy = true;
       };
       in [
-        (greedy "ghostty")
+        # (greedy "ghostty")
       ];
 
     onActivation = {
