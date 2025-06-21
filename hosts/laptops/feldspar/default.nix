@@ -54,6 +54,8 @@
       "homebrew/homebrew-cask" = self.inputs.homebrew-cask;
     };
 
+    autoMigrate = true;
+
     user = "kat";
   };
 
