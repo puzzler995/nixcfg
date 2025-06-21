@@ -10,8 +10,10 @@
       };
 
       settings = {
-        experimental-features = ["nix-command" "flakes"];
-      }
+        default = {
+          experimental-features = ["nix-command" "flakes"];
+        };
+      };
 
       optimise = {
         automatic = true;
