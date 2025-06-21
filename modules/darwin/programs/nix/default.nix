@@ -9,6 +9,10 @@
         interval = [{Hour = 12;}];
       };
 
+      settings = {
+        experimental-features = ["nix-command" "flakes"];
+      }
+
       optimise = {
         automatic = true;
         interval = [{Hour = 9;}];
