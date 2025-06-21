@@ -74,5 +74,5 @@
   darwinManager = {
     profiles.common.enable = true;
     programs.nix.enable = true;
-  }
+  };
 }
