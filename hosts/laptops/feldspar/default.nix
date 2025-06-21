@@ -16,6 +16,12 @@
     lsd
 
     mas
+    bash
+    htop
+
+    bitwarden-desktop
+    bitwarden-cli
+
   ];
 
   homebrew = {
@@ -29,10 +35,13 @@
       };
       in [
         (greedy "ghostty")
+        (greedy "fork")
+        (greedy "obsidian")
+        (greedy "visual-studio-code")
       ];
 
     onActivation = {
-      # cleanup = "zap";
+      cleanup = "zap";
       upgrade = true;
     };
 
@@ -47,7 +56,7 @@
 
   nix-homebrew = {
     enable = true;
-    mutableTaps = false;
+    # mutableTaps = false;
 
     taps = {
       "homebrew/homebrew-core" = self.inputs.homebrew-core;
