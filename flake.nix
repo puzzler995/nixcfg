@@ -24,6 +24,32 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
+    sops = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
+    #--------------------------------------------
+    # Non Flake Inputs
+
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
   
   outputs = { self, ... }: let 
@@ -52,6 +78,35 @@
         self.overlays.default
       ];
   in {
+    darwinConfigurations = {
+      feldspar = self.inputs.nix-darwin.lib.darwinSystem {
+        modules = [
+          ./hosts/laptops/feldspar
+          self.darwinModules.default
+          self.inputs.home-manager.darwinModules.home-manager
+          self.inputs.lix-module.nixosModules.default
+          self.inputs.nix-homebrew.darwinModules.nix-homebrew
+          self.inputs.sops.darwinModules.default
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+            };
+
+            nixpkgs = {
+                inherit overlays;
+                config.allowUnfree = true;
+            };
+          }
+        ];
+
+        specialArgs = {
+          inherit self;
+        };
+      };
+    };
+
+    darwinModules.default = ./modules/darwin;
     nixosModules = {
       disko-btrfs-subvolumes = ./modules/nixos/disko/btrfs-subvolumes;
       disko-btrfs-subvolumes-with-swap = ./modules/nixos/disko/btrfs-subvolumes-with-swap;
@@ -67,25 +122,6 @@
       users = ./modules/nixos/users;
     };
     nixosConfigurations = {
-        nixos-test = self.inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/nixos-test
-
-            self.inputs.disko.nixosModules.disko
-            self.inputs.home-manager.nixosModules.home-manager
-            self.inputs.lix-module.nixosModules.default
-            self.nixosModules.users
-
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-              };
-            }
-
-          ];
-        };
         solarsystem = self.inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
@@ -97,10 +133,11 @@
           };
 
           modules = [
-            ./hosts/solarsystem
+            ./hosts/servers/solarsystem
             self.inputs.disko.nixosModules.disko
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
+            self.inputs.sops.nixosModules.sops
             self.nixosModules.nixos
             self.nixosModules.users
 
@@ -121,11 +158,12 @@
           system = "x86_64-linux";
 
           modules = [
-            ./hosts/timberhearth
+            ./hosts/desktops/timberhearth
 
             self.inputs.disko.nixosModules.disko
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
+            self.inputs.sops.nixosModules.sops
             self.nixosModules.users
 
             {

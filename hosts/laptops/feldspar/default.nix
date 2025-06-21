@@ -1,0 +1,63 @@
+{
+  config,
+  lib,
+  pkgs,
+  self,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [
+    (lib.hiPrio uutils-coreutils-noprefix)
+    git
+    vim
+    bottom
+    wget
+    curl
+    bat
+    lsd
+
+    mas
+  ];
+
+  homebrew = {
+    enable = true;
+    global.autoUpdate = false;
+
+    casks = let
+      greedy = name: {
+        inherit name;
+        greedy = true;
+      };
+      in [
+        (greedy "ghostty")
+      ];
+
+    onActivation = {
+      # cleanup = "zap";
+      upgrade = true;
+    };
+
+    taps = builtins.attrNames config.nix-homebrew.taps;
+  };
+
+  networking = {
+    computerName = "feldspar";
+    hostName = "feldspar";
+    localHostName = "feldspar";
+  };
+
+  nix-homebrew = {
+    enable = true;
+    mutableTaps = false;
+
+    taps = {
+      "homebrew/homebrew-core" = self.inputs.homebrew-core;
+      "homebrew/homebrew-cask" = self.inputs.homebrew-cask;
+    };
+
+    user = "kat";
+  };
+
+  nixpkgs.hostPlatform = "x86_64-darwin";
+
+
+}

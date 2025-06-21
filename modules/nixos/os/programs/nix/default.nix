@@ -1,4 +1,4 @@
-{config, lib, self, ...}: {
+{config, lib, ...}: {
   options.nixOSManager.programs.nix.enable = lib.mkEnableOption "My Main Nix Config";
 
   config = lib.mkIf config.nixOSManager.programs.nix.enable {
