@@ -59,5 +59,20 @@
 
   nixpkgs.hostPlatform = "x86_64-darwin";
 
+  system = {
+    primaryUser = "kat";
+    stateVersion = 6;
+  };
 
+  users.users.kat = {
+    description = "Katherine Marsee";
+    home = "/Users/kat";
+
+    shell = pkgs.zsh;
+  };
+
+  darwinManager = {
+    profiles.common.enable = true;
+    programs.nix.enable = true;
+  }
 }

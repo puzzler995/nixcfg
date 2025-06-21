@@ -1,5 +1,87 @@
 {
   "nodes": {
+    "alejandra": {
+      "inputs": {
+        "fenix": "fenix",
+        "flakeCompat": "flakeCompat",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1744324181,
+        "narHash": "sha256-Oi1n2ncF4/AWeY6X55o2FddIRICokbciqFYK64XorYk=",
+        "owner": "kamadorueda",
+        "repo": "alejandra",
+        "rev": "3e2a85506627062313e131bf8a85315f3387c8e0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kamadorueda",
+        "ref": "4.0.0",
+        "repo": "alejandra",
+        "type": "github"
+      }
+    },
+    "brew-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1749511373,
+        "narHash": "sha256-7u1TdHQaUCzzgf/n8T3bQosuYXyNBEPU/3WQQqozE5o=",
+        "owner": "Homebrew",
+        "repo": "brew",
+        "rev": "7b4ef99fed96966269ee35994407fa4c06097a4d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Homebrew",
+        "ref": "4.5.6",
+        "repo": "brew",
+        "type": "github"
+      }
+    },
+    "disko": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1750040002,
+        "narHash": "sha256-KrC9iOVYIn6ukpVlHbqSA4hYCZ6oDyJKrcLqv4c5v84=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "7f1857b31522062a6a00f88cbccf86b43acceed1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
+    "fenix": {
+      "inputs": {
+        "nixpkgs": [
+          "alejandra",
+          "nixpkgs"
+        ],
+        "rust-analyzer-src": "rust-analyzer-src"
+      },
+      "locked": {
+        "lastModified": 1730615655,
+        "narHash": "sha256-2HBR3zLn57LXKNRtxBb+O+uDqHM4n0pz51rPayMl4cg=",
+        "owner": "nix-community",
+        "repo": "fenix",
+        "rev": "efeb50e2535b17ffd4a135e6e3e5fd60a525180c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "fenix",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -18,6 +100,22 @@
         "type": "github"
       }
     },
+    "flakeCompat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696426674,
+        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flakey-profile": {
       "locked": {
         "lastModified": 1712898590,
@@ -30,26 +128,6 @@
       "original": {
         "owner": "lf-",
         "repo": "flakey-profile",
-        "type": "github"
-      }
-    },
-    "helix": {
-      "inputs": {
-        "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay"
-      },
-      "locked": {
-        "lastModified": 1749932067,
-        "narHash": "sha256-sSep3SEsh53545RLaM7T1Eg+4frPmPScQKE6zmts9Ic=",
-        "owner": "helix-editor",
-        "repo": "helix",
-        "rev": "205e7ece70c52a7d921ea014e1017c41488e37e5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "helix-editor",
-        "ref": "master",
-        "repo": "helix",
         "type": "github"
       }
     },
@@ -71,6 +149,38 @@
         "owner": "nix-community",
         "ref": "release-25.05",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "homebrew-cask": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750543386,
+        "narHash": "sha256-F6W/BR/brC1h/meTGWuG6FqvsHqBOpvPDXS0iGnYm3w=",
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "rev": "1f8d8182b0209bcb49e4510f48f2c539b0d1934e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "type": "github"
+      }
+    },
+    "homebrew-core": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750543278,
+        "narHash": "sha256-UwJw9rTIGHqwzvlXxMYI0qThO19Bckw5luXl7FlFMkA=",
+        "owner": "homebrew",
+        "repo": "homebrew-core",
+        "rev": "e1ff51cb746d5042ee2f22fe6d527eb4fe63aa1e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-core",
         "type": "github"
       }
     },
@@ -109,23 +219,46 @@
         "url": "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz"
       }
     },
-    "nixpkgs": {
+    "nix-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1740560979,
-        "narHash": "sha256-Vr3Qi346M+8CjedtbyUevIGDZW8LcA1fTG0ugPY/Hic=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "5135c59491985879812717f4c9fea69604e7f26f",
+        "lastModified": 1749744770,
+        "narHash": "sha256-MEM9XXHgBF/Cyv1RES1t6gqAX7/tvayBC1r/KPyK1ls=",
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "rev": "536f951efb1ccda9b968e3c9dee39fbeb6d3fdeb",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
+        "owner": "nix-darwin",
+        "ref": "nix-darwin-25.05",
+        "repo": "nix-darwin",
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nix-homebrew": {
+      "inputs": {
+        "brew-src": "brew-src"
+      },
+      "locked": {
+        "lastModified": 1749952250,
+        "narHash": "sha256-V2ix0knpdJXirQ+4pjbnggjdSALTsFWGIP/NDpaQkdU=",
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
+        "rev": "37126f06f4890f019af3d7606ce5d30a457afcd0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
       "locked": {
         "lastModified": 1749727998,
         "narHash": "sha256-mHv/yeUbmL91/TvV95p+mBVahm9mdQMJoqaTVTALaFw=",
@@ -143,30 +276,52 @@
     },
     "root": {
       "inputs": {
-        "helix": "helix",
+        "alejandra": "alejandra",
+        "disko": "disko",
         "home-manager": "home-manager",
+        "homebrew-cask": "homebrew-cask",
+        "homebrew-core": "homebrew-core",
         "lix-module": "lix-module",
-        "nixpkgs": "nixpkgs_2"
+        "nix-darwin": "nix-darwin",
+        "nix-homebrew": "nix-homebrew",
+        "nixpkgs": "nixpkgs",
+        "sops": "sops"
       }
     },
-    "rust-overlay": {
+    "rust-analyzer-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730555913,
+        "narHash": "sha256-KNHZUlqsEibg3YtfUyOFQSofP8hp1HKoY+laoesBxRM=",
+        "owner": "rust-lang",
+        "repo": "rust-analyzer",
+        "rev": "f17a5bbfd0969ba2e63a74505a80e55ecb174ed9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rust-lang",
+        "ref": "nightly",
+        "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "sops": {
       "inputs": {
         "nixpkgs": [
-          "helix",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1740623427,
-        "narHash": "sha256-3SdPQrZoa4odlScFDUHd4CUPQ/R1gtH4Mq9u8CBiK8M=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "d342e8b5fd88421ff982f383c853f0fc78a847ab",
+        "lastModified": 1750119275,
+        "narHash": "sha256-Rr7Pooz9zQbhdVxux16h7URa6mA80Pb/G07T4lHvh0M=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "77c423a03b9b2b79709ea2cb63336312e78b72e2",
         "type": "github"
       },
       "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
+        "owner": "Mic92",
+        "repo": "sops-nix",
         "type": "github"
       }
     },
