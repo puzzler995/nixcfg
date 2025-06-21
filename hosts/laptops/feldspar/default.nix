@@ -47,7 +47,7 @@
 
   nix-homebrew = {
     enable = true;
-    mutableTaps = false;
+    # mutableTaps = false;
 
     taps = {
       "homebrew/homebrew-core" = self.inputs.homebrew-core;
