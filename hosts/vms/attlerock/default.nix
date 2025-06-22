@@ -18,7 +18,7 @@
   
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  diskManager.installDrive = "/dev/disk/by-id/";
+  diskManager.installDrive = "/dev/vda";
 
   networking = {
     hostName = "attlerock";
