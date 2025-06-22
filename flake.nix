@@ -72,7 +72,7 @@
         "gabbro"
         "timberhearth"
         "solarsystem"
-        "nixos-test"
+        "attlerock"
       ];
       overlays = [
         self.overlays.default
@@ -173,6 +173,38 @@
               };
             }
 
+          ];
+        };
+        attlerock = self.inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+
+          specialArgs = {
+            inherit self;
+            flake = {
+              nixosModules = self.nixosModules;
+            };
+          };
+
+          modules = [
+            ./hosts/servers/solarsystem
+            self.inputs.disko.nixosModules.disko
+            self.inputs.home-manager.nixosModules.home-manager
+            self.inputs.lix-module.nixosModules.default
+            self.inputs.sops.nixosModules.sops
+            self.nixosModules.nixos
+            self.nixosModules.users
+
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+              };
+
+              nixpkgs = {
+                inherit overlays;
+                config.allowUnfree = true;
+              };
+            }
           ];
         };
     };
