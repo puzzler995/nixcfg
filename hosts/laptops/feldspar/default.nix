@@ -19,7 +19,6 @@
     bash
     htop
 
-    bitwarden-cli
   ];
 
   homebrew = {
