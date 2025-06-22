@@ -19,7 +19,6 @@
     bash
     htop
 
-    bitwarden-desktop
     bitwarden-cli
 
   ];
@@ -34,6 +33,7 @@
         greedy = true;
       };
       in [
+        (greedy "bitwarden")
         (greedy "ghostty")
         (greedy "fork")
         (greedy "obsidian")
