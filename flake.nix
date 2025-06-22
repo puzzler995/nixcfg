@@ -186,7 +186,7 @@
           };
 
           modules = [
-            ./hosts/servers/solarsystem
+            ./hosts/vms/attlerock
             self.inputs.disko.nixosModules.disko
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
