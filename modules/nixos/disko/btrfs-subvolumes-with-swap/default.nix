@@ -10,8 +10,8 @@
       type = lib.types.str;
     };
     swapSize = lib.mkOption {
-      descrption = "Size of the Swap Disk e.g. 16G";
-      default = "16G";
+      description = "Size of the Swap Disk e.g. 16G";
+      default = "24G";
       type = lib.types.str;
     };
   };
