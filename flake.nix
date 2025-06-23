@@ -164,6 +164,7 @@
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
             self.inputs.sops.nixosModules.sops
+            self.nixosModules.nixos
             self.nixosModules.users
 
             {

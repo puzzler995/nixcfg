@@ -1,6 +1,8 @@
 {
   config,
   self,
+  pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -19,7 +21,7 @@
 
   networking = {
     hostName = "timberhearth";
-    useDHCP = lib.mkDefault true;
+    useDHCP = true;
   };
 
   system.stateVersion = "25.05";
@@ -79,7 +81,7 @@
   };
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with self.pkgs; [
+  environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
