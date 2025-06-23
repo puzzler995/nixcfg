@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    ./secrets.nix
     self.nixosModules.disko-btrfs-subvolumes-with-swap
     self.nixosModules.hardware-amd-cpu
     self.nixosModules.hardware-common
@@ -43,6 +44,10 @@
       nix.enable = true;
       systemd-boot.enable = true;
     };
+
+    services = {
+      tailscale.enable = true;
+    }
   };
 
 
