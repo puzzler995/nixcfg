@@ -1,4 +1,8 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   options.nixOSManager.programs.systemd-boot.enable = lib.mkEnableOption "Enable systemd-boot bootloader";
 
   config = lib.mkIf config.nixOSManager.programs.systemd-boot.enable {

@@ -1,4 +1,8 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   options.nixOSManager.programs.nix.enable = lib.mkEnableOption "My Main Nix Config";
 
   config = lib.mkIf config.nixOSManager.programs.nix.enable {
@@ -22,7 +26,7 @@
       };
 
       settings = {
-        experimental-features = [ "nix-command" "flakes" ];
+        experimental-features = ["nix-command" "flakes"];
       };
     };
 

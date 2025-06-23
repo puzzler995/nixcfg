@@ -16,7 +16,7 @@
     self.nixosModules.locale-en-us
   ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "uas" "usb_storage" "usbhid" "sd_mod"];
 
   diskManager.installDrive = "/dev/disk/by-id/nvme-Samsung_SSD_980_PRO_2TB_S6B0NL0T933139R";
 
@@ -50,11 +50,6 @@
     };
   };
 
-
-
-
-
-
   ########################################################
   # TIME TO REPLACE THIS SHIT
   # Use latest kernel.
@@ -65,12 +60,6 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -85,12 +74,7 @@
     pulse.enable = true;
   };
   programs.firefox.enable = true;
-  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    curl
-    git
     discord
     vscode.fhs
   ];

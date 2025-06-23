@@ -1,4 +1,10 @@
-{self, lib, config, pkgs, ...}: {
+{
+  self,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   options.nixOSManager.services.tailscale = {
     enable = lib.mkEnableOption "Enable Tailscale VPN";
 
@@ -23,11 +29,12 @@
       }
     ];
 
-    home-manager.sharedModules = [ {
-      programs.gnome-shell.extensions = [
-        {package = pkgs.gnomeExtensions.tailscale-qs;}
-      ];
-    }
+    home-manager.sharedModules = [
+      {
+        programs.gnome-shell.extensions = [
+          {package = pkgs.gnomeExtensions.tailscale-qs;}
+        ];
+      }
     ];
 
     networking.firewall = {
@@ -35,7 +42,7 @@
       trustedInterfaces = [config.services.tailscale.interfaceName];
     };
 
-    services ={
+    services = {
       tailscale = {
         enable = true;
         inherit (config.nixOSManager.services.tailscale) authKeyFile;

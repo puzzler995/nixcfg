@@ -1,4 +1,8 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   options.darwinManager.programs.nix.enable = lib.mkEnableOption "My Main Nix Config";
 
   config = lib.mkIf config.darwinManager.programs.nix.enable {

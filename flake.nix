@@ -1,6 +1,6 @@
 {
   description = "Kat's Homelab and Device flake";
-  
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
@@ -37,7 +37,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     #--------------------------------------------
     # Non Flake Inputs
 
@@ -51,8 +50,8 @@
       flake = false;
     };
   };
-  
-  outputs = { self, ... }: let 
+
+  outputs = {self, ...}: let
     allSystems = [
       "x86_64-linux"
       "x86_64-darwin"
@@ -60,23 +59,23 @@
     ];
 
     forAllSystems = f:
-      self.inputs.nixpkgs.lib.genAttrs allSystems (system: 
-      f {
-        pkgs = import self.inputs.nixpkgs {
-          inherit overlays system;
-          config.allowUnfree = true;
-        };
-      });
+      self.inputs.nixpkgs.lib.genAttrs allSystems (system:
+        f {
+          pkgs = import self.inputs.nixpkgs {
+            inherit overlays system;
+            config.allowUnfree = true;
+          };
+        });
 
-      forAllLinuxHosts = self.inputs.nixpkgs.lib.genAttrs [
-        "gabbro"
-        "timberhearth"
-        "solarsystem"
-        "attlerock"
-      ];
-      overlays = [
-        self.overlays.default
-      ];
+    forAllLinuxHosts = self.inputs.nixpkgs.lib.genAttrs [
+      "gabbro"
+      "timberhearth"
+      "solarsystem"
+      "attlerock"
+    ];
+    overlays = [
+      self.overlays.default
+    ];
   in {
     darwinConfigurations = {
       feldspar = self.inputs.nix-darwin.lib.darwinSystem {
@@ -94,8 +93,8 @@
             };
 
             nixpkgs = {
-                inherit overlays;
-                config.allowUnfree = true;
+              inherit overlays;
+              config.allowUnfree = true;
             };
           }
         ];
@@ -122,108 +121,107 @@
       users = ./modules/nixos/users;
     };
     nixosConfigurations = {
-        solarsystem = self.inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+      solarsystem = self.inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
 
-          specialArgs = {
-            inherit self;
-            flake = {
-              nixosModules = self.nixosModules;
+        specialArgs = {
+          inherit self;
+          flake = {
+            nixosModules = self.nixosModules;
+          };
+        };
+
+        modules = [
+          ./hosts/servers/solarsystem
+          self.inputs.disko.nixosModules.disko
+          self.inputs.home-manager.nixosModules.home-manager
+          self.inputs.lix-module.nixosModules.default
+          self.inputs.sops-nix.nixosModules.sops
+          self.nixosModules.nixos
+          self.nixosModules.users
+
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
             };
-          };
 
-          modules = [
-            ./hosts/servers/solarsystem
-            self.inputs.disko.nixosModules.disko
-            self.inputs.home-manager.nixosModules.home-manager
-            self.inputs.lix-module.nixosModules.default
-            self.inputs.sops-nix.nixosModules.sops
-            self.nixosModules.nixos
-            self.nixosModules.users
-
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-              };
-
-              nixpkgs = {
-                inherit overlays;
-                config.allowUnfree = true;
-              };
-            }
-          ];
-        };
-        timberhearth = self.inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-
-          modules = [
-            ./hosts/desktops/timberhearth
-
-            self.inputs.disko.nixosModules.disko
-            self.inputs.home-manager.nixosModules.home-manager
-            self.inputs.lix-module.nixosModules.default
-            self.inputs.sops-nix.nixosModules.sops
-            self.nixosModules.nixos
-            self.nixosModules.users
-
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-              };
-
-              nixpkgs = {
-                inherit overlays;
-                config.allowUnfree = true;
-              };
-
-              sops.defaultSopsFile = ./secrets/secrets.yaml;
-            }
-
-          ];
-
-          specialArgs = {
-            inherit self;
-            # flake = {
-            #   nixosModules = self.nixosModules;
-            # };
-          };
-        };
-        attlerock = self.inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-
-          specialArgs = {
-            inherit self;
-            flake = {
-              nixosModules = self.nixosModules;
+            nixpkgs = {
+              inherit overlays;
+              config.allowUnfree = true;
             };
-          };
+          }
+        ];
+      };
+      timberhearth = self.inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
 
-          modules = [
-            ./hosts/vms/attlerock
-            self.inputs.disko.nixosModules.disko
-            self.inputs.home-manager.nixosModules.home-manager
-            self.inputs.lix-module.nixosModules.default
-            self.inputs.sops-nix.nixosModules.sops
-            self.nixosModules.nixos
-            self.nixosModules.users
+        modules = [
+          ./hosts/desktops/timberhearth
 
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-              };
+          self.inputs.disko.nixosModules.disko
+          self.inputs.home-manager.nixosModules.home-manager
+          self.inputs.lix-module.nixosModules.default
+          self.inputs.sops-nix.nixosModules.sops
+          self.nixosModules.nixos
+          self.nixosModules.users
 
-              nixpkgs = {
-                inherit overlays;
-                config.allowUnfree = true;
-              };
-            }
-          ];
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+            };
+
+            nixpkgs = {
+              inherit overlays;
+              config.allowUnfree = true;
+            };
+
+            sops.defaultSopsFile = ./secrets/secrets.yaml;
+          }
+        ];
+
+        specialArgs = {
+          inherit self;
+          # flake = {
+          #   nixosModules = self.nixosModules;
+          # };
         };
+      };
+      attlerock = self.inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        specialArgs = {
+          inherit self;
+          flake = {
+            nixosModules = self.nixosModules;
+          };
+        };
+
+        modules = [
+          ./hosts/vms/attlerock
+          self.inputs.disko.nixosModules.disko
+          self.inputs.home-manager.nixosModules.home-manager
+          self.inputs.lix-module.nixosModules.default
+          self.inputs.sops-nix.nixosModules.sops
+          self.nixosModules.nixos
+          self.nixosModules.users
+
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+            };
+
+            nixpkgs = {
+              inherit overlays;
+              config.allowUnfree = true;
+            };
+          }
+        ];
+      };
     };
 
     overlays.default = import ./overlays/default.nix {inherit self;};
   };
-} 
+}

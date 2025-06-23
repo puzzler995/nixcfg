@@ -1,4 +1,10 @@
-{config, lib, pkgs, self, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  self,
+  ...
+}: {
   options.darwinManager.profiles.common.enable = lib.mkEnableOption "common system profile";
 
   config = lib.mkIf config.darwinManager.profiles.common.enable {

@@ -1,4 +1,10 @@
-{config, lib, pkgs, self, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  self,
+  ...
+}: {
   options.nixOSManager.profiles.common.enable = lib.mkEnableOption "Common System Config Profile.";
 
   config = lib.mkIf config.nixOSManager.profiles.common.enable {
@@ -35,7 +41,6 @@
       };
 
       nh.enable = true;
-
     };
 
     networking.networkmanager.enable = true;
@@ -74,8 +79,6 @@
           PermitRootLogin = "prohibit-password";
         };
       };
-
-
     };
     system = {
       #configurationRevision = self.rev or self.dirtyRev or null;

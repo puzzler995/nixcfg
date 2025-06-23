@@ -1,7 +1,7 @@
 {config, ...}: {
   config = {
     boot = {
-      extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+      extraModulePackages = [config.boot.kernelPackages.nvidia_x11];
       initrd.kernelModules = ["nvidia"];
       kernelParams = ["nvidia.NVreg_PreserveVideoMemoryAllocations=1"];
     };
@@ -20,6 +20,6 @@
       };
     };
 
-    services.xserver.videoDrivers = [ "nvidia" ];
+    services.xserver.videoDrivers = ["nvidia"];
   };
 }

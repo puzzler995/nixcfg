@@ -20,7 +20,6 @@
     htop
 
     bitwarden-cli
-
   ];
 
   homebrew = {
@@ -32,13 +31,13 @@
         inherit name;
         greedy = true;
       };
-      in [
-        (greedy "bitwarden")
-        (greedy "ghostty")
-        (greedy "fork")
-        (greedy "obsidian")
-        (greedy "visual-studio-code")
-      ];
+    in [
+      (greedy "bitwarden")
+      (greedy "ghostty")
+      (greedy "fork")
+      (greedy "obsidian")
+      (greedy "visual-studio-code")
+    ];
 
     onActivation = {
       cleanup = "zap";

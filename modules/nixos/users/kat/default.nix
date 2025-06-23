@@ -1,5 +1,8 @@
-{ config, pkgs, ...}: 
 {
+  config,
+  pkgs,
+  ...
+}: {
   users.users.kat = {
     description = "Katherine Marsee";
     extraGroups = config.userManager.defaultGroups;
