@@ -15,7 +15,7 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "usbhid" "sd_mod" ];
 
-  diskManager.installDrive = "/dev/disk/by-id/nvme-Samsung_SSD_980_PRO_2TB_S6B0NL0T933139R"
+  diskManager.installDrive = "/dev/disk/by-id/nvme-Samsung_SSD_980_PRO_2TB_S6B0NL0T933139R";
 
   networking = {
     hostName = "timberhearth";
