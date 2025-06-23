@@ -174,6 +174,13 @@
             }
 
           ];
+
+          specialArgs = {
+            inherit self;
+            # flake = {
+            #   nixosModules = self.nixosModules;
+            # };
+          };
         };
         attlerock = self.inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
