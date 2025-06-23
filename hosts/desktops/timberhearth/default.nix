@@ -77,17 +77,9 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  users.users.kat = {
-    isNormalUser = true;
-    description = "Katherine Marsee";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with self.pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
