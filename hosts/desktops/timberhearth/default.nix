@@ -47,7 +47,7 @@
 
     services = {
       tailscale.enable = true;
-    }
+    };
   };
 
 
