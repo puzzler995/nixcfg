@@ -285,7 +285,7 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",
-        "sops": "sops"
+        "sops-nix": "sops-nix"
       }
     },
     "rust-analyzer-src": {
@@ -305,7 +305,7 @@
         "type": "github"
       }
     },
-    "sops": {
+    "sops-nix": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
