@@ -15,6 +15,8 @@
         curl
         bat
         lsd
+        ssh-to-age
+        sops
       ];
 
       variables = {

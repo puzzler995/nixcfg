@@ -32,7 +32,7 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
-    sops = {
+    sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -86,7 +86,7 @@
           self.inputs.home-manager.darwinModules.home-manager
           self.inputs.lix-module.nixosModules.default
           self.inputs.nix-homebrew.darwinModules.nix-homebrew
-          self.inputs.sops.darwinModules.default
+          self.inputs.sops-nix.darwinModules.default
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -137,7 +137,7 @@
             self.inputs.disko.nixosModules.disko
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
-            self.inputs.sops.nixosModules.sops
+            self.inputs.sops-nix.nixosModules.sops
             self.nixosModules.nixos
             self.nixosModules.users
 
@@ -163,7 +163,7 @@
             self.inputs.disko.nixosModules.disko
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
-            self.inputs.sops.nixosModules.sops
+            self.inputs.sops-nix.nixosModules.sops
             self.nixosModules.nixos
             self.nixosModules.users
 
@@ -171,6 +171,19 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+              };
+
+              nixpkgs = {
+                inherit overlays;
+                config.allowUnfree = true;
+              };
+
+              sops = {
+                defaultSopsFile = ./secrets/secrets.yaml;
+                age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+                secrets = {
+                  "tailscale/authkey" = {};
+                };
               };
             }
 
@@ -198,7 +211,7 @@
             self.inputs.disko.nixosModules.disko
             self.inputs.home-manager.nixosModules.home-manager
             self.inputs.lix-module.nixosModules.default
-            self.inputs.sops.nixosModules.sops
+            self.inputs.sops-nix.nixosModules.sops
             self.nixosModules.nixos
             self.nixosModules.users
 

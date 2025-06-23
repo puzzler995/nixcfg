@@ -1,0 +1,9 @@
+keys:
+  - &timberhearth age1mxnzal4n5yqjj4njglk84csnjz25zen9nzjkdq8z78960c44geqq7kdgkp
+  - &solarsystem  age1z4c004s4jhwlnvqsms9jw7cavnfva92rynccel0420cqcm0rcfcqrnr9v4
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini|sops)$
+    key_groups:
+      - age:
+          - *timberhearth
+          - *solarsystem
