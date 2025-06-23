@@ -53,7 +53,7 @@
   ########################################################
   # TIME TO REPLACE THIS SHIT
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
