@@ -36,7 +36,7 @@
   };
 
   nixOSManager = {
-    desktop.enable = true;
+    desktop.gnome.enable = true;
 
     profiles = {
       common.enable = true;
