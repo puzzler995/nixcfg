@@ -18,15 +18,10 @@
       jq
     ];
 
-    programs.git = {
-      enable = true;
-      userName = "Katherine Marsee";
-      userEmail = "ksmarsee@gmail.com";
-    };
-
     homeManager = {
       programs = {
         ghostty.enable = true;
+        git.enable = true;
       };
     };
 
