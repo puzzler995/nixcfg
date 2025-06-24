@@ -28,8 +28,8 @@
       variables = {
         # FLAKE = lib.mkDefault "git+ssh://git@github.com/puzzler995/nixcfg.git";
         # NH_FLAKE = lib.mkDefault "git+ssh://git@github.com/puzzler995/nixcfg.git";
-        FLAKE = lib.mkDefault "git+file:///home/kat/dev/nixcfg"
-        NH_FLAKE = lib.mkDefault "git+file:///home/kat/dev/nixcfg"
+        FLAKE = lib.mkDefault "git+file:///home/kat/dev/nixcfg";
+        NH_FLAKE = lib.mkDefault "git+file:///home/kat/dev/nixcfg";
       };
     };
 
