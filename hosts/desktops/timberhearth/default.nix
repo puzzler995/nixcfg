@@ -35,6 +35,12 @@
     };
   };
 
+  programs.firefox.enable = true;
+  environment.systemPackages = with pkgs; [
+    discord
+    vscode.fhs
+  ];
+
   nixOSManager = {
     desktop.gnome.enable = true;
 
@@ -44,6 +50,7 @@
 
     programs = {
       nix.enable = true;
+      steam.enable = true;
       systemd-boot.enable = true;
     };
 
@@ -51,10 +58,4 @@
       tailscale.enable = true;
     };
   };
-
-  programs.firefox.enable = true;
-  environment.systemPackages = with pkgs; [
-    discord
-    vscode.fhs
-  ];
 }
