@@ -1,3 +1,5 @@
 {self, ...}: {
-  home-manager.users.kat = self.homeManagerModules.kat;
+  home-manager.users = {
+    inherit (self.homeManagerModules) kat;
+  };
 }
