@@ -1,6 +1,10 @@
 {pkgs, lib, config, ...}: {
+  imprts = [
+    ./gnome
+  ];
+
   options.nixOSManager.desktop.enable = lib.mkOption {
-    default = false;
+    default = config.myNixOS.desktop.gnome.enable;
     description = "Default Agnostic Desktop Config";
     type = lib.types.bool;
   };
@@ -25,8 +29,6 @@
     services = {
       xserver = {
         enable = true;
-        displayManager.gdm.enable = true; #TODO: MOVE
-        desktopManager.gnome.enable = true; #TODO: MOVE
       };
 
       printing.enable = true;
