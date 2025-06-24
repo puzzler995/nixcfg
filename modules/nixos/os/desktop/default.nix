@@ -25,7 +25,7 @@
     services = {
       xserver = {
         enable = true;
-        displayManager.gdm.enable = true #TODO: MOVE
+        displayManager.gdm.enable = true; #TODO: MOVE
         desktopManager.gnome.enable = true; #TODO: MOVE
       };
 
