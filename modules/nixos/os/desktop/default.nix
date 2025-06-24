@@ -1,4 +1,4 @@
-{pkgs, lib, ...}: {
+{pkgs, lib, config, ...}: {
   options.nixOSManager.desktop.enable = lib.mkOption {
     default = false;
     description = "Default Agnostic Desktop Config";
