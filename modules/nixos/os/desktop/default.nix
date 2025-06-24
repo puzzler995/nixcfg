@@ -31,7 +31,6 @@
 
       printing.enable = true;
 
-      pulseaudio.enable = true;
       pipewire = {
         enable = true;
         alsa = {
