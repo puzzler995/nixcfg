@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    self.homeManagerModules.default
+    # self.homeManagerModules.default
   ];
 
   config = {
