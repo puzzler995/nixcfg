@@ -106,6 +106,12 @@
     };
 
     darwinModules.default = ./modules/darwin;
+
+    homeManagerModules = {
+      kat = ./homes/kat;
+      default = ./modules/home;
+    };
+
     nixosModules = {
       disko-btrfs-subvolumes = ./modules/nixos/disko/btrfs-subvolumes;
       disko-btrfs-subvolumes-with-swap = ./modules/nixos/disko/btrfs-subvolumes-with-swap;

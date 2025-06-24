@@ -16,7 +16,6 @@
     home.packages = with pkgs; [
       neofetch
       jq
-      nix-output-monitor
     ];
 
     programs.git = {
