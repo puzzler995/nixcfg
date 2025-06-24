@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    ./home.nix
     ./secrets.nix
     self.nixosModules.disko-btrfs-subvolumes-with-swap
     self.nixosModules.hardware-amd-cpu
