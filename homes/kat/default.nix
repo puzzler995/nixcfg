@@ -24,6 +24,12 @@
       userEmail = "ksmarsee@gmail.com";
     };
 
+    homeManager = {
+      programs = {
+        ghostty.enable = true;
+      };
+    };
+
     home.stateVersion = "25.05";
   };
 }
