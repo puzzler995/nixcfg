@@ -94,6 +94,8 @@
           self.inputs.sops-nix.darwinModules.default
           {
             home-manager = {
+              backupFileExtension = "bak";
+              extraSpecialArgs = {inherit self;};
               useGlobalPkgs = true;
               useUserPackages = true;
             };
@@ -154,6 +156,8 @@
 
           {
             home-manager = {
+              backupFileExtension = "bak";
+              extraSpecialArgs = {inherit self;};
               useGlobalPkgs = true;
               useUserPackages = true;
             };
@@ -180,6 +184,7 @@
 
           {
             home-manager = {
+              backupFileExtension = "bak";
               extraSpecialArgs = {inherit self;};
               useGlobalPkgs = true;
               useUserPackages = true;
@@ -222,6 +227,8 @@
 
           {
             home-manager = {
+              backupFileExtension = "bak";
+              extraSpecialArgs = {inherit self;};
               useGlobalPkgs = true;
               useUserPackages = true;
             };
