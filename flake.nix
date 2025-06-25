@@ -32,6 +32,11 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -74,6 +79,7 @@
       "attlerock"
     ];
     overlays = [
+      self.inputs.nur.overlays.default
       self.overlays.default
     ];
   in {

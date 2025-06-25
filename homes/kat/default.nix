@@ -18,8 +18,11 @@
       jq
     ];
 
+    programs.home-manager.enable = true;
+
     homeManager = {
       programs = {
+        firefox.enable = true;
         ghostty.enable = true;
         git.enable = true;
       };
