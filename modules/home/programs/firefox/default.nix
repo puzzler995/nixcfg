@@ -30,6 +30,9 @@
             default = "ddg";
             force = true;
           };
+          settings = {
+            "extensions.autoDisableScopes" = 0;
+          };
         };
       };
     };
