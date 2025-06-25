@@ -38,7 +38,8 @@
 
   programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
-    discord
+    vesktop
+    #discord
     vscode.fhs
   ];
 
