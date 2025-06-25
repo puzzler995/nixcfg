@@ -8,22 +8,25 @@
 
       profiles = {
         default = {
-          extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-            augmented-steam
-            betterttv
-            bitwarden
-            clearurls
-            consent-o-matic
-            enhanced-github
-            enhancer-for-nebula
-            enhancer-for-youtube
-            indie-wiki-buddy
-            languagetool
-            pronoundb
-            reddit-enhancement-suite
-            sponsorblock
-            ublock-origin
-          ];
+          extensions = {
+            packages = with pkgs.nur.repos.rycee.firefox-addons; [
+              augmented-steam
+              betterttv
+              bitwarden
+              clearurls
+              consent-o-matic
+              enhanced-github
+              enhancer-for-nebula
+              enhancer-for-youtube
+              indie-wiki-buddy
+              languagetool
+              pronoundb
+              reddit-enhancement-suite
+              sponsorblock
+              ublock-origin
+            ];
+          force = true;
+          };
           id = 0;
           search = {
             inherit engines;
