@@ -22,7 +22,7 @@
 
     homeManager = {
       programs = {
-        firefox.enable = false;
+        firefox.enable = true;
         ghostty.enable = true;
         git.enable = true;
       };
