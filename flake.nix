@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Nix Formatter
     alejandra = {
@@ -82,6 +83,24 @@
       self.inputs.nur.overlays.default
       self.overlays.default
     ];
+
+    pkgs-unstable' = 
+      (import self.inputs.nixpkgs-unstable {
+        system = "x86_64-linux";
+      }).applyPatches
+      {
+        name = "nixpkgs-unstable-patched";
+        src = self.inputs.nixpkgs-unstable;
+        patches = [
+          (builtins.fetchurl {
+            url = "https://patch-diff.githubusercontent.com/raw/NixOS/nixpkgs/pull/368924.patch";
+            sha256 = "sha256-00000000000000000000000000";
+          })
+        ];
+      };
+    pkgs-unstable = import pkgs-unstable' {
+      system= "x86_64-linux";
+    };
   in {
     darwinConfigurations = {
       feldspar = self.inputs.nix-darwin.lib.darwinSystem {
