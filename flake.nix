@@ -91,6 +91,7 @@
       self.overlays.default
     ];
 
+    #Patching for DistroAV. Doesn't seem to work?
     pkgs' = 
       (import self.inputs.nixpkgs {
         system = "x86_64-linux";
