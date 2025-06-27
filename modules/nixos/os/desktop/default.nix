@@ -25,6 +25,7 @@
       initrd.verbose = false;
       loader.timeout = 0;
     };
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     services = {
       xserver = {

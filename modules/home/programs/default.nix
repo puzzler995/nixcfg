@@ -4,5 +4,6 @@
     ./ghostty
     ./git
     ./obs
+    ./vscode
   ];
 }

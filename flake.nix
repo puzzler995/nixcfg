@@ -40,6 +40,8 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -87,6 +89,7 @@
       "attlerock"
     ];
     overlays = [
+      self.inputs.nix-vscode-extensions.overlays.default
       self.inputs.nur.overlays.default
       self.overlays.default
     ];

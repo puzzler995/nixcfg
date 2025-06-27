@@ -38,8 +38,6 @@
 
   environment.systemPackages = with pkgs; [
     vesktop
-    #discord
-    vscode.fhs
   ];
 
   nixOSManager = {
