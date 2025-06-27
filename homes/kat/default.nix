@@ -24,6 +24,7 @@
         firefox.enable = true;
         ghostty.enable = true;
         git.enable = true;
+        obs.enable = true;
       };
     };
 
