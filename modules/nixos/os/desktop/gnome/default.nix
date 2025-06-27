@@ -5,6 +5,7 @@
     home-manager.sharedModules = [
       {
         config.homeManager.desktop.gnome.enable = true;
+        config.homeManager.desktop.gnome.dock = true;
       }
     ];
     services.xserver.desktopManager.gnome.enable = true;
