@@ -3,6 +3,6 @@
     ./firefox
     ./ghostty
     ./git
-    ./obs
+    #./obs
   ];
 }
