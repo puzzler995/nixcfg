@@ -27,13 +27,18 @@
 
         userSettings = {
           "files.autoSave" = "onFocusChange";
-          "editor.formatOnPaste" = true;
-          "editor.formatOnSave" = true;
-          "editor.formatOnType" = true;
+          "editor.formatOnPaste" = false;
+          "editor.formatOnSave" = false;
+          "editor.formatOnType" = false;
           "git.autoStash" = true;
           "git.autofetch" = true;
           "git.confirmSync" = false;
           "github.gitProtocol" = "ssh";
+          "yaml.schemas" = {
+            "/home/kat/.vscode/extensions/continue.continue-1.0.15-linux-x64/config-yaml-schema.json" = [
+              ".continue/**/*.yaml"
+            ];
+          };
         };
       };
     };
