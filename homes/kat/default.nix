@@ -14,8 +14,7 @@
     home.homeDirectory = "/home/kat";
 
     home.packages = with pkgs; [
-      neofetch
-      jq
+      tenacity
     ];
 
     programs.home-manager.enable = true;
