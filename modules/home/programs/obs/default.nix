@@ -4,6 +4,7 @@
   config = lib.mkIf config.homeManager.programs.obs.enable {
     programs.obs = {
       enable = true;
+      package = pkgs.obs-studio;
       plugins = [
         pkgs.obs-studio-plugins.obs-pipewire-audio-capture
         # pkgs.obs-studio-plugins.distroav
