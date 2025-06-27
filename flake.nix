@@ -2,8 +2,7 @@
   description = "Kat's Homelab and Device flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Nix Formatter
     alejandra = {
@@ -17,17 +16,25 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    lix = {
+      url = "git+https://git.lix.systems/lix-project/lix.git?ref=release-2.93";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs ={
+        lix.follows = "lix";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
 
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
+      url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -84,13 +91,13 @@
       self.overlays.default
     ];
 
-    pkgs-unstable' = 
-      (import self.inputs.nixpkgs-unstable {
+    pkgs' = 
+      (import self.inputs.nixpkgs {
         system = "x86_64-linux";
       }).applyPatches
       {
-        name = "nixpkgs-unstable-patched";
-        src = self.inputs.nixpkgs-unstable;
+        name = "nixpkgs-unstable";
+        src = self.inputs.nixpkgs;
         patches = [
           (builtins.fetchurl {
             url = "https://patch-diff.githubusercontent.com/raw/NixOS/nixpkgs/pull/368924.patch";
@@ -98,7 +105,7 @@
           })
         ];
       };
-    pkgs-unstable = import pkgs-unstable' {
+    pkgs = import pkgs' {
       system= "x86_64-linux";
     };
   in {
