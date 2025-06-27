@@ -8,8 +8,8 @@
         config.homeManager.desktop.gnome.dock = true;
       }
     ];
-    services.xserver.desktopManager.gnome.enable = true;
-    services.xserver.displayManager.gdm.enable = true; #TODO: MOVE
+    services.desktopManager.gnome.enable = true;
+    services.displayManager.gdm.enable = true; #TODO: MOVE
     nixOSManager.desktop.enable = true;
   };
 }
