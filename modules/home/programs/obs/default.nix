@@ -2,7 +2,7 @@
   options.homeManager.programs.obs.enable = lib.mkEnableOption "obs studio";
 
   config = lib.mkIf config.homeManager.programs.obs.enable {
-    programs.obs = {
+    programs.obs-studio = {
       enable = true;
       package = pkgs.obs-studio;
       plugins = [
