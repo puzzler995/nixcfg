@@ -16,7 +16,7 @@
     home.packages = with pkgs; [
       archipelago
       bolt-launcher
-      nexusmods-app-unfree
+      nexusmods-app
       openrct2
       owmods-gui
       poptracker
