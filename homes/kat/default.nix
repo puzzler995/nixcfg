@@ -14,6 +14,12 @@
     home.homeDirectory = "/home/kat";
 
     home.packages = with pkgs; [
+      archipelago
+      bolt-launcher
+      nexusmods-app-unfree
+      openrct2
+      owmods-gui
+      poptracker
       tenacity
     ];
 
