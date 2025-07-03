@@ -4,8 +4,6 @@
   ...
 }: {
   imports = [
-    ./configuration.nix
-
     flake.nixosModules.disko-ext4
     flake.nixosModules.hardware-common
     flake.nixosModules.hardware-intel-cpu
@@ -40,5 +38,9 @@
       nix.enable = true;
       systemd-boot.enable = true;
     };
+
+    services = {
+      tailscale.enable = true;
+    }
   };
 }
