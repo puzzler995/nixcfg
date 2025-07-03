@@ -55,9 +55,14 @@
     #--------------------------------------------
     # Non Flake Inputs
 
+    # bizhawk-src = {
+    #   url = "github:TASEmulators/BizHawk";
+    #   flake = false;
+    # };
+    # Temporarily jumping to the flake someone made
     bizhawk = {
-      url = "github:TASEmulators/BizHawk";
-      flake = false;
+      url = "github:SignalWalker/BizHawk";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     homebrew-core = {
@@ -100,24 +105,7 @@
       self.overlays._2ship2harkinian
     ];
 
-    #Patching for DistroAV. Doesn't seem to work?
-    pkgs' = 
-      (import self.inputs.nixpkgs {
-        system = "x86_64-linux";
-      }).applyPatches
-      {
-        name = "nixpkgs-unstable";
-        src = self.inputs.nixpkgs;
-        patches = [
-          (builtins.fetchurl {
-            url = "https://patch-diff.githubusercontent.com/raw/NixOS/nixpkgs/pull/368924.patch";
-            sha256 = "sha256-00000000000000000000000000";
-          })
-        ];
-      };
-    pkgs = import pkgs' {
-      system= "x86_64-linux";
-    };
+    
   in {
     darwinConfigurations = {
       feldspar = self.inputs.nix-darwin.lib.darwinSystem {

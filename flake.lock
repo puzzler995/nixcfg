@@ -23,6 +23,26 @@
         "type": "github"
       }
     },
+    "bizhawk": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1748035151,
+        "narHash": "sha256-0hGJLx7DcjrxSJTY4aZYfS3zSIkg4EzQQdqDiQUoCsA=",
+        "owner": "SignalWalker",
+        "repo": "BizHawk",
+        "rev": "dfbd82e3dd4e982c01581615272f8b6bfeb0f051",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SignalWalker",
+        "repo": "BizHawk",
+        "type": "github"
+      }
+    },
     "brew-src": {
       "flake": false,
       "locked": {
@@ -511,6 +531,7 @@
     "root": {
       "inputs": {
         "alejandra": "alejandra",
+        "bizhawk": "bizhawk",
         "disko": "disko",
         "home-manager": "home-manager",
         "homebrew-cask": "homebrew-cask",
