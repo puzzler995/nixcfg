@@ -32,8 +32,8 @@
 
     system = {
       defaults.alf = {
-        globalstate = 1;
-        loggingenabled = 1;
+        #globalstate = 1;
+        #loggingenabled = 1;
       };
     };
   };
