@@ -92,6 +92,7 @@
       self.inputs.nix-vscode-extensions.overlays.default
       self.inputs.nur.overlays.default
       self.overlays.default
+      self.overlays._2ship2harkinian
     ];
 
     #Patching for DistroAV. Doesn't seem to work?
