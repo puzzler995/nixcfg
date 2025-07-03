@@ -22,6 +22,7 @@
       owmods-gui
       poptracker
       #retroarch-full
+      shipwright
       tenacity
     ];
 
