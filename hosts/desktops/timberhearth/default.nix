@@ -52,6 +52,10 @@
     desktop.gnome.enable = true;
 
     profiles = {
+      btrfs = {
+        enable = true;
+        deduplicate = true;
+      };
       common.enable = true;
     };
 
