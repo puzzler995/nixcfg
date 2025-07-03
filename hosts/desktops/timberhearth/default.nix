@@ -44,10 +44,6 @@
     '';
   };
 
-  environment.systemPackages = with pkgs; [
-    vesktop
-  ];
-
   nixOSManager = {
     desktop.gnome.enable = true;
 

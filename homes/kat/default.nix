@@ -36,6 +36,7 @@
         ghostty.enable = true;
         git.enable = true;
         obs.enable = true;
+        vesktop.enable = true;
         vscode.enable = true;
       };
     };

@@ -4,6 +4,7 @@
     ./ghostty
     ./git
     ./obs
+    ./vesktop
     ./vscode
   ];
 }
