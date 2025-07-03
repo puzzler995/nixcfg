@@ -4,7 +4,7 @@
   ];
 
   options.nixOSManager.desktop.enable = lib.mkOption {
-    default = config.myNixOS.desktop.gnome.enable;
+    default = config.nixOSManager.desktop.gnome.enable;
     description = "Default Agnostic Desktop Config";
     type = lib.types.bool;
   };
