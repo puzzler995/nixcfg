@@ -30,7 +30,7 @@
     homeManager = {
       profiles = {
         archipelago.enable = true;
-      }
+      };
       programs = {
         firefox.enable = true;
         ghostty.enable = true;
