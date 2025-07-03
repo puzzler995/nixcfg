@@ -23,6 +23,7 @@
       poptracker
       #retroarch-full
       shipwright
+      #_2ship2harkinian
       tenacity
     ];
 
