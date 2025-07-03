@@ -21,7 +21,7 @@
       openrct2
       owmods-gui
       poptracker
-      retroarch-full
+      #retroarch-full
       tenacity
     ];
 
