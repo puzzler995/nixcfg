@@ -55,6 +55,11 @@
     #--------------------------------------------
     # Non Flake Inputs
 
+    bizhawk = {
+      url = "github:TASEmulators/BizHawk";
+      flake = false;
+    };
+
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;

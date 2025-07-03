@@ -14,13 +14,11 @@
     home.homeDirectory = "/home/kat";
 
     home.packages = with pkgs; [
-      archipelago
       bolt-launcher
       #dolphin-emu
       nexusmods-app-unfree
       openrct2
       owmods-gui
-      poptracker
       #retroarch-full
       shipwright
       #_2ship2harkinian
@@ -30,6 +28,9 @@
     programs.home-manager.enable = true;
 
     homeManager = {
+      profiles = {
+        archipelago.enable = true;
+      }
       programs = {
         firefox.enable = true;
         ghostty.enable = true;
