@@ -274,5 +274,6 @@
     };
 
     overlays.default = import ./overlays/default.nix {inherit self;};
+    overlays._2ship2harkinian = import ./overlays/_2ship2harkinian/default.nix {inherit self;};
   };
 }
