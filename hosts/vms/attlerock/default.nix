@@ -20,6 +20,7 @@
 
   networking = {
     hostName = "attlerock";
+    useNetworkd = true;
   };
 
   system.stateVersion = "25.05";
