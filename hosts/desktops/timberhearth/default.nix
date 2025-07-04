@@ -48,6 +48,7 @@
     desktop.gnome.enable = true;
 
     profiles = {
+      autoUpgrade.enable = true;
       btrfs = {
         enable = true;
         deduplicate = true;

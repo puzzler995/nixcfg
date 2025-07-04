@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./autoUpgrade
     ./btrfs
     ./common
   ];
