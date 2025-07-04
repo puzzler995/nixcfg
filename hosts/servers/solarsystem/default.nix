@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./home.nix
     flake.nixosModules.disko-ext4
     flake.nixosModules.hardware-common
     flake.nixosModules.hardware-intel-cpu
@@ -31,6 +32,7 @@
 
   nixOSManager = {
     profiles = {
+      autoUpgrade.enable = true;
       common.enable = true;
     };
 
@@ -40,7 +42,7 @@
     };
 
     services = {
-      #tailscale.enable = true;
+      tailscale.enable = true;
     };
   };
 }
