@@ -35,6 +35,11 @@
         firefox.enable = true;
         ghostty.enable = true;
         git.enable = true;
+        jetbrains = {
+          enable = true;
+          intellij = true;
+          rider = true;
+        };
         obs.enable = true;
         vesktop.enable = true;
         vscode.enable = true;
