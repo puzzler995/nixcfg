@@ -174,7 +174,7 @@
           self.inputs.disko.nixosModules.disko
           self.inputs.home-manager.nixosModules.home-manager
           self.inputs.lix-module.nixosModules.default
-          self.inputs.microvm.nixosModules.microvm
+          self.inputs.microvm.nixosModules.host
           self.inputs.sops-nix.nixosModules.sops
           self.nixosModules.nixos
           self.nixosModules.users
@@ -185,19 +185,6 @@
               extraSpecialArgs = {inherit self;};
               useGlobalPkgs = true;
               useUserPackages = true;
-            };
-
-            microvm = {
-              autostart = [
-                "attlerock"
-              ];
-              vms = {
-                attlerock = {
-                  flake = self;
-
-                  updateFlake = "github:puzzler995/nixcfg";
-                };
-              };
             };
 
             nixpkgs = {
