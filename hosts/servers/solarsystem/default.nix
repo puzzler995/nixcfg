@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./home.nix
+    ./secrets.nix
     flake.nixosModules.disko-ext4
     flake.nixosModules.hardware-common
     flake.nixosModules.hardware-intel-cpu
