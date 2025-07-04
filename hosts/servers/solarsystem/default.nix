@@ -15,7 +15,7 @@
   boot.initrd.availableKernelModules = ["uhci_hcd" "ehci_pci" "ata_piix" "megaraid_sas" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
 
   diskManager.installDrive = "/dev/disk/by-id/scsi-36848f690e5294c002ebc189916656afa";
-  
+
             microvm = {
               autostart = [
                 "attlerock"
@@ -53,7 +53,7 @@
           Gateway = "192.168.1.1";
           DNS = ["192.168.1.1"];
         };
-        linkConfig.RequiredForOnline = "routeable";
+        linkConfig.RequiredForOnline = "routable";
       };
     };
 
