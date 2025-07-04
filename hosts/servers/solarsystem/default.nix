@@ -25,7 +25,7 @@
         flake = self;
 
         updateFlake = "github:puzzler995/nixcfg"
-      }
+      };
     };
   };
 
