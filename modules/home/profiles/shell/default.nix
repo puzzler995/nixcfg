@@ -69,9 +69,8 @@
         };
 
         shellAliases = {
-          ll = "ls -lah";
+          ll = lib.mkDefault "lsd -lah";
           cat = "bat";
-          ls = "lsd";
           ".." = "cd ..";
         };
       };
