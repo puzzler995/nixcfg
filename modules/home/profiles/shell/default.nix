@@ -37,13 +37,13 @@
         useTheme = "glowsticks";
       };
 
-      ripgrep-all.enable = true;
-
-      thefuck = {
+      pay-respects = {
         enable = true;
         enableBashIntegration = true;
         enableZshIntegration = true;
       };
+
+      ripgrep-all.enable = true;
 
       zsh = {
         enable = true;
