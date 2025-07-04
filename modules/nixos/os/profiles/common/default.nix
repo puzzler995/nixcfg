@@ -15,12 +15,9 @@
         (lib.hiPrio uutils-coreutils-noprefix)
         git
         vim
-        bottom
         lm_sensors
         wget
         curl
-        bat
-        lsd
         ssh-to-age
         sops
       ];

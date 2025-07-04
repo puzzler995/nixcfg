@@ -30,6 +30,7 @@
     homeManager = {
       profiles = {
         archipelago.enable = true;
+        shell.enable = true;
       };
       programs = {
         firefox.enable = true;
