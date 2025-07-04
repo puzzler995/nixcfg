@@ -26,6 +26,17 @@
   system.stateVersion = "25.05";
   time.timeZone = "America/New_York";
 
+  systemd.user.services.my-cool-user-service = {
+    enable = true;
+    after = [ "network.target" ];
+    wantedBy = [ "default.target" ];
+    description = "Output Network Config";
+    serviceConfig = {
+        Type = "simple";
+        ExecStart = ''ip a'';
+    };
+  };
+
   systemd.network = {
     enable = true;
     networks = {
