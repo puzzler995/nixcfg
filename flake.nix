@@ -33,6 +33,11 @@
       };
     };
 
+    microvm = {
+      url = "github:astro/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -162,9 +167,6 @@
 
         specialArgs = {
           inherit self;
-          flake = {
-            nixosModules = self.nixosModules;
-          };
         };
 
         modules = [
@@ -172,6 +174,7 @@
           self.inputs.disko.nixosModules.disko
           self.inputs.home-manager.nixosModules.home-manager
           self.inputs.lix-module.nixosModules.default
+          self.inputs.microvm.nixosModules.microvm
           self.inputs.sops-nix.nixosModules.sops
           self.nixosModules.nixos
           self.nixosModules.users
@@ -235,14 +238,11 @@
 
         specialArgs = {
           inherit self;
-          flake = {
-            nixosModules = self.nixosModules;
-          };
         };
 
         modules = [
           ./hosts/vms/attlerock
-          self.inputs.disko.nixosModules.disko
+          self.inputs.microvm.nixosModules.microvm
           self.inputs.home-manager.nixosModules.home-manager
           self.inputs.lix-module.nixosModules.default
           self.inputs.sops-nix.nixosModules.sops

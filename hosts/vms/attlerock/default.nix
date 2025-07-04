@@ -1,32 +1,37 @@
-{self, lib, modulesPath, ...}: {
-  imports = [
-    self.nixosModules.disko-btrfs-subvolumes-with-swap
-    self.nixosModules.hardware-common
-    "${modulesPath}/profiles/qemu-guest.nix"
-    self.nixosModules.locale-en-us
-  ];
+{config, self, pkgs, lib, ...}: {
 
-  boot.initrd.availableKernelModules = 
-    [
-      "ahci"
-      "xhci_pci"
-      "virtio_pci"
-      "sr_mod"
-      "virtio_blk"
-    ]
-
-  
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  diskManager.installDrive = "/dev/vda";
+  microvm = {
+    hypervisor = "qemu";
+    interfaces = [
+      {
+        type = "tap";
+        id = "vm-test1";
+        mac ="02:00:00:00:00:01";
+      }
+    ];
+  };
 
   networking = {
     hostName = "attlerock";
-    useDHCP = lib.mkDefault true;
   };
 
   system.stateVersion = "25.05";
   time.timeZone = "America/New_York";
+
+  systemd.network = {
+    enable = true;
+    networks = {
+      "20-lan" = {
+        matchConfig.Type = "ether";
+        networkConfig = {
+          Address = ["192.168.1.201"];
+          Gateway = "192.168.1.1";
+          DNS = ["192.168.1.1"];
+          DHCP = "no";
+        };
+      };
+    };
+  };
 
   userManager = {
     kat = {
@@ -36,13 +41,18 @@
   };
 
   nixOSManager = {
+
     profiles = {
+      autoUpgrade.enable = true;
       common.enable = true;
     };
 
     programs = {
       nix.enable = true;
-      systemd-boot.enable = true;
+    };
+
+    services = {
+      #TODO tailscale.enable = true;
     };
   };
 }
