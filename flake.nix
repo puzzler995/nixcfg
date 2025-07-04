@@ -187,6 +187,19 @@
               useUserPackages = true;
             };
 
+            microvm = {
+              autostart = [
+                "attlerock"
+              ];
+              vms = {
+                attlerock = {
+                  flake = self;
+
+                  updateFlake = "github:puzzler995/nixcfg";
+                };
+              };
+            };
+
             nixpkgs = {
               inherit overlays;
               config.allowUnfree = true;
