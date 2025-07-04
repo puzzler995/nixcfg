@@ -24,7 +24,7 @@
       attlerock = {
         flake = self;
 
-        updateFlake = "github:puzzler995/nixcfg"
+        updateFlake = "github:puzzler995/nixcfg";
       };
     };
   };
