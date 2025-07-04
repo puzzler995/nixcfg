@@ -26,6 +26,8 @@
   system.stateVersion = "25.05";
   time.timeZone = "America/New_York";
 
+  systemd.services."systemd-networkd".environment.SYSTEMD_LOG_LEVEL = "debug";
+
   systemd.network = {
     enable = true;
     networks = {
