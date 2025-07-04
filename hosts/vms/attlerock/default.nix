@@ -9,6 +9,13 @@
         mac ="02:00:00:00:00:01";
       }
     ];
+    shares = [
+      {
+        tag = "ro-store";
+        source = "/nix/store";
+        mountPoint = "/nix/.ro-store";
+      }
+    ];
   };
 
   networking = {
