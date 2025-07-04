@@ -1,5 +1,11 @@
 {config, self, pkgs, lib, ...}: {
 
+  environment.etc."machine-id" = {
+    mode = "0644";
+    text = 
+      lib.addresses.machineId.${config.networking.hostName} + "\n";
+  };
+
   microvm = {
     hypervisor = "qemu";
     interfaces = [
@@ -14,6 +20,13 @@
         tag = "ro-store";
         source = "/nix/store";
         mountPoint = "/nix/.ro-store";
+      }
+      {
+        source = "/var/lib/microvms/${config.networking.hostName}/journal";
+        mountPoint = "/var/log/journal";
+        tag = "journal";
+        proto = "virtiofs";
+        socket = "journal.sock";
       }
     ];
   };
