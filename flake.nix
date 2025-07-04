@@ -188,6 +188,8 @@
               inherit overlays;
               config.allowUnfree = true;
             };
+
+            sops.defaultSopsFile = ./secrets/secrets.yaml;
           }
         ];
       };
