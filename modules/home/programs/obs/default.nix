@@ -1,4 +1,9 @@
-{config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options.homeManager.programs.obs.enable = lib.mkEnableOption "obs studio";
 
   config = lib.mkIf config.homeManager.programs.obs.enable {

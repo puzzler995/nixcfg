@@ -43,7 +43,6 @@
     programs = {
       firefox.nativeMessagingHosts = [pkgs.gnome-browser-connector];
 
-
       gnome-shell = {
         enable = true;
 

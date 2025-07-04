@@ -1,4 +1,9 @@
-{config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options.homeManager.programs.vesktop.enable = lib.mkEnableOption "vesktop";
 
   config = lib.mkIf config.homeManager.programs.vesktop.enable {
@@ -100,7 +105,6 @@
           WebKeybinds.enabled = true;
           WebScreenShareFixes.enabled = true;
           WhoReacted.enabled = true;
-        
         };
       };
     };

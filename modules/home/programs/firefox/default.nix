@@ -1,4 +1,11 @@
-{config, lib, pkgs, ...}: let engines = import ./engines.nix; in {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  engines = import ./engines.nix;
+in {
   options.homeManager.programs.firefox.enable = lib.mkEnableOption "firefox web browser";
 
   config = lib.mkIf config.homeManager.programs.firefox.enable {
@@ -25,7 +32,7 @@
               sponsorblock
               ublock-origin
             ];
-          force = true;
+            force = true;
           };
           id = 0;
           search = {

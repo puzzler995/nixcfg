@@ -1,4 +1,8 @@
-{lib, config, ...}: {
+{
+  lib,
+  config,
+  ...
+}: {
   options.nixOSManager.desktop.gnome.enable = lib.mkEnableOption "enable GNOME";
 
   config = lib.mkIf config.nixOSManager.desktop.gnome.enable {

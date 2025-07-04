@@ -18,7 +18,6 @@
     mas
     bash
     htop
-
   ];
 
   homebrew = {

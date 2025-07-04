@@ -1,4 +1,9 @@
-{pkgs, lib, config, ...}: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./gnome
   ];
@@ -10,14 +15,13 @@
   };
 
   config = lib.mkIf config.nixOSManager.desktop.enable {
-
     boot = {
       plymouth = {
         enable = true;
         theme = "loader_alt";
         themePackages = with pkgs; [
           (adi1090x-plymouth-themes.override {
-            selected_themes = [ "loader_alt" ];
+            selected_themes = ["loader_alt"];
           })
         ];
       };

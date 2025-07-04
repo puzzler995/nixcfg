@@ -1,8 +1,28 @@
-{config, lib, pkgs, ...}: 
-  let
-    commonPlugins = ["ini" "grep-console" "file-watchers" "docker" "toml" "nixidea" "-env-files" "rainbow-brackets" "extra-icons" "indent-rainbow" "protocol-buffers" "mario-progress-bar" "codeglance-pro" "better-direnv" "continue"];
-    intellijPlugins = ["maven-helper"] ++ commonPlugins;
-  in {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  commonPlugins = [
+    "ini"
+    "grep-console" 
+    "file-watchers" 
+    "docker" 
+    "toml" 
+    "nixidea"
+    "-env-files"
+    "rainbow-brackets" 
+    "extra-icons" 
+    "indent-rainbow" 
+    "protocol-buffers" 
+    "mario-progress-bar" 
+    "codeglance-pro" 
+    "better-direnv" 
+    "continue"
+  ];
+  intellijPlugins = ["maven-helper"] ++ commonPlugins;
+in {
   options.homeManager.programs.jetbrains = {
     enable = lib.mkEnableOption "Jetbrains Suite";
     intellij = lib.mkEnableOption "IntelliJ";

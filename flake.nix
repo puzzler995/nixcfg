@@ -27,7 +27,7 @@
 
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
-      inputs ={
+      inputs = {
         lix.follows = "lix";
         nixpkgs.follows = "nixpkgs";
       };
@@ -104,8 +104,6 @@
       self.overlays.default
       self.overlays._2ship2harkinian
     ];
-
-    
   in {
     darwinConfigurations = {
       feldspar = self.inputs.nix-darwin.lib.darwinSystem {

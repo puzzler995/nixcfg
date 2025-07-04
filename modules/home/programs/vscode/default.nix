@@ -1,4 +1,9 @@
-{config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options.homeManager.programs.vscode.enable = lib.mkEnableOption "vscode";
   config = lib.mkIf config.homeManager.programs.vscode.enable {
     programs.vscode = {
@@ -9,7 +14,7 @@
         enableUpdateCheck = false;
         enableExtensionUpdateCheck = false;
 
-        extensions = (with pkgs.vscode-extensions; [
+        extensions = with pkgs.vscode-extensions; [
           continue.continue
           eamodio.gitlens
           esbenp.prettier-vscode
@@ -22,8 +27,8 @@
           ms-vscode-remote.remote-ssh
           redhat.vscode-yaml
           oderwat.indent-rainbow
-        # ]) ++ (with pkgs.vscode-marketplace; [
-        ]);
+          # ]) ++ (with pkgs.vscode-marketplace; [
+        ];
 
         userSettings = {
           "files.autoSave" = "onFocusChange";

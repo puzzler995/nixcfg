@@ -1,4 +1,9 @@
-{config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options.homeManager.programs.ghostty.enable = lib.mkEnableOption "ghostty terminal emulator";
   config = lib.mkIf config.homeManager.programs.ghostty.enable {
     programs.ghostty = {
