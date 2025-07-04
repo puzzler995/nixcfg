@@ -31,7 +31,7 @@
       "20-lan" = {
         matchConfig.Type = "ether";
         networkConfig = {
-          Address = ["192.168.1.201"];
+          Address = ["192.168.1.201/24"];
           Gateway = "192.168.1.1";
           DNS = ["192.168.1.1"];
           DHCP = "no";
