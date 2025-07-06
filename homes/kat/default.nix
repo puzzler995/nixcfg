@@ -16,6 +16,7 @@
     home.packages = with pkgs; [
       bolt-launcher
       #dolphin-emu
+      itch
       nexusmods-app-unfree
       openrct2
       owmods-gui
