@@ -14,6 +14,7 @@
     home.homeDirectory = "/home/kat";
 
     home.packages = with pkgs; [
+      bitwarden-desktop
       bolt-launcher
       #dolphin-emu
       itch
