@@ -111,6 +111,7 @@
       self.inputs.nur.overlays.default
       self.overlays.default
       self.overlays._2ship2harkinian
+      self.overlays.sm64ex
     ];
   in {
     darwinConfigurations = {
@@ -271,5 +272,6 @@
 
     overlays.default = import ./overlays/default.nix {inherit self;};
     overlays._2ship2harkinian = import ./overlays/_2ship2harkinian/default.nix {inherit self;};
+    overlays.sm64ex = import ./overlays/sm64ex/default.nix {inherit self;};
   };
 }
