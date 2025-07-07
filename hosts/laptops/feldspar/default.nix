@@ -33,6 +33,7 @@
       (greedy "bitwarden")
       (greedy "ghostty")
       (greedy "fork")
+      (greedy "itch")
       (greedy "obsidian")
       (greedy "visual-studio-code")
     ];
