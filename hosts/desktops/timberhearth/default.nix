@@ -4,7 +4,8 @@
   pkgs,
   lib,
   ...
-}: {
+}: 
+  {
   imports = [
     ./home.nix
     ./secrets.nix
@@ -28,6 +29,7 @@
 
   environment.systemPackages = with pkgs; [
     nix-alien
+    sm64ex
   ];
   programs.nix-ld.enable = true;
 
