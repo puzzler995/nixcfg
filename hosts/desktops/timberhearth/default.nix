@@ -26,6 +26,11 @@
     useDHCP = lib.mkDefault true;
   };
 
+  environment.systemPackages = with pkgs; [
+    nix-alien
+  ];
+  programs.nix-ld.enable = true;
+
   system.stateVersion = "25.05";
   time.timeZone = "America/New_York";
 

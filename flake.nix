@@ -38,6 +38,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-alien.url = "github:thiagokokada/nix-alien";
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -104,6 +106,7 @@
       "attlerock"
     ];
     overlays = [
+      self.inputs.nix-alien.overlays.default
       self.inputs.nix-vscode-extensions.overlays.default
       self.inputs.nur.overlays.default
       self.overlays.default
