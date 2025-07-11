@@ -9,46 +9,63 @@
     self.homeManagerModules.default
   ];
 
-  config = {
-    home.username = "kat";
-    home.homeDirectory = "/home/kat";
+  config = lib.mkMerge [
+    ##### COMMON
+    {
+      home.username = "kat";
 
-    home.packages = with pkgs; [
-      bitwarden-desktop
-      bolt-launcher
-      #dolphin-emu
-      itch
-      nexusmods-app-unfree
-      openrct2
-      owmods-gui
-      #retroarch-full
-      shipwright
-      #_2ship2harkinian
-      tenacity
-    ];
+      programs.home-manager.enable = true;
 
-    programs.home-manager.enable = true;
-
-    homeManager = {
-      profiles = {
-        archipelago.enable = true;
-        shell.enable = true;
-      };
-      programs = {
-        firefox.enable = true;
-        ghostty.enable = true;
-        git.enable = true;
-        jetbrains = {
-          enable = true;
-          intellij = true;
-          rider = true;
+      homeManager = {
+        profiles = {
+          shell.enable = true;
         };
-        obs.enable = true;
-        vesktop.enable = true;
-        vscode.enable = true;
+        programs = {
+          firefox.enable = true;
+          ghostty.enable = true;
+          git.enable = true;
+          vesktop.enable = true;
+          vscode.enable = true;
+        };
       };
-    };
 
-    home.stateVersion = "25.05";
-  };
+      home.stateVersion = "25.05";
+    }
+    ##### MAC
+    (lib.mkIf pkgs.stdenv.isDarwin {
+      homeDirector = "/Users/kat";
+    })
+    ##### LINUX
+    (lib.mkIf pkgs.stdenv.isLinux {
+      home.homeDirectory = "/home/kat";
+
+      home.packages = with pkgs; [
+        bitwarden-desktop
+        bolt-launcher
+        #dolphin-emu
+        itch
+        nexusmods-app-unfree
+        openrct2
+        owmods-gui
+        #retroarch-full
+        shipwright
+        #_2ship2harkinian
+        tenacity
+      ];
+
+      homeManager = {
+        profiles = {
+          archipelago.enable = true;
+        };
+        programs = {
+          jetbrains = {
+            enable = true;
+            intellij = true;
+            rider = true;
+          };
+          obs.enable = true;
+        };
+      };
+    })
+  ];
 }
