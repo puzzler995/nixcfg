@@ -5,6 +5,9 @@
   self,
   ...
 }: {
+  imports = [
+    ./home.nix
+  ];
   environment.systemPackages = with pkgs; [
     (lib.hiPrio uutils-coreutils-noprefix)
     git
