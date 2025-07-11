@@ -8,7 +8,7 @@
   config = lib.mkIf config.homeManager.programs.vscode.enable {
     programs.vscode = {
       enable = true;
-      package = pkgs.vscode.fhs;
+      package = lib.mkIf pkgs.stdenv.isLinux pkgs.vscode.fhs;
 
       profiles.default = {
         enableUpdateCheck = false;

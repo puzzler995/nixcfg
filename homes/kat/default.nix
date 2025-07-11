@@ -33,7 +33,7 @@
     }
     ##### MAC
     (lib.mkIf pkgs.stdenv.isDarwin {
-      homeDirector = "/Users/kat";
+      home.homeDirectory = "/Users/kat";
     })
     ##### LINUX
     (lib.mkIf pkgs.stdenv.isLinux {
