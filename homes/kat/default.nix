@@ -60,7 +60,7 @@
         };
         programs = {
           jetbrains = {
-            enable = true;
+            enable = false;
             intellij = true;
             rider = true;
           };
