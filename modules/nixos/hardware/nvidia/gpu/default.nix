@@ -2,7 +2,7 @@
   config = {
     boot = {
       extraModulePackages = [config.boot.kernelPackages.nvidia_x11];
-      initrd.kernelModules = ["nvidia"];
+      initrd.kernelModules = ["nvidia" "nvidia_modeset" "nvidia_drm" "nvidia_uvm"];
       kernelParams = ["nvidia.NVreg_PreserveVideoMemoryAllocations=1"];
     };
 

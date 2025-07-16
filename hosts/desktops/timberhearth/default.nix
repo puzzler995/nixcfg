@@ -29,7 +29,7 @@
 
   environment.systemPackages = with pkgs; [
     nix-alien
-    sm64ex
+    #sm64ex
   ];
   programs.nix-ld.enable = true;
 
