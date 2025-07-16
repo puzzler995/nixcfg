@@ -49,7 +49,7 @@
         owmods-gui
         #retroarch-full
         shipwright
-        sm64ex
+        #sm64ex
       #_2ship2harkinian
         tenacity
       ];
