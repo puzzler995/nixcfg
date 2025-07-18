@@ -102,6 +102,8 @@
             replaceMessageContents = true;
           };
 
+          VolumeBooster.enabled = true;
+
           WebKeybinds.enabled = true;
           WebScreenShareFixes.enabled = true;
           WhoReacted.enabled = true;
