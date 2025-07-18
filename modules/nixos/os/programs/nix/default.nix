@@ -30,6 +30,13 @@
       };
     };
 
-    programs.nix-ld.enable = true;
+    programs = {
+      nix-ld.enable = true;
+      nix-index = {
+        enable = true;
+        enableZshIntegration = true;
+        enableBashIntegration = true;
+      }
+    };
   };
 }
