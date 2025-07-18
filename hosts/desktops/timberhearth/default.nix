@@ -14,6 +14,7 @@
     self.nixosModules.hardware-common
     self.nixosModules.hardware-corsair-keyboard
     self.nixosModules.hardware-nvidia-gpu
+    self.nixosModules.hardware-steelseries-headset
     self.nixosModules.hardware-utechvenus-mouse
     self.nixosModules.locale-en-us
   ];

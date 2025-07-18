@@ -52,6 +52,8 @@
           {package = pkgs.gnomeExtensions.arcmenu;}
           {package = pkgs.gnomeExtensions.caffeine;}
           {package = pkgs.gnomeExtensions.tiling-shell;}
+          #TODO: Modularlize this correctly
+          {package = pkgs.gnomeExtensions.headsetcontrol;}
         ];
       };
     };

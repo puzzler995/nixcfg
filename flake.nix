@@ -162,6 +162,7 @@
       hardware-corsair-keyboard = ./modules/nixos/hardware/corsair/keyboard;
       hardware-intel-cpu = ./modules/nixos/hardware/intel/cpu;
       hardware-nvidia-gpu = ./modules/nixos/hardware/nvidia/gpu;
+      hardware-steelseries-headset = ./modules/nixos/hardware/steelseries/headset;
       hardware-utechvenus-mouse = ./modules/nixos/hardware/utechvenus/mouse;
       locale-en-us = ./modules/nixos/locale/en-us;
       nixos = ./modules/nixos/os;
