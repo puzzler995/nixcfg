@@ -66,7 +66,10 @@
 
     programs = {
       nix.enable = true;
-      obs.enable = true;
+      obs = {
+        enable = true;
+        nvidia.enable = true;
+      };
       steam.enable = true;
       systemd-boot.enable = true;
     };
