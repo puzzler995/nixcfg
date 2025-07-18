@@ -7,7 +7,7 @@
   options.nixOSManager.programs.obs = {
     enable = lib.mkEnableOption "obs studio";
     nvidia.enable = lib.mkEnableOption "NVENC Encoding";
-  }
+  };
 
   config = lib.mkIf config.nixOSManager.programs.obs.enable {
     programs.obs-studio = {
