@@ -18,6 +18,8 @@
       });
       plugins = with pkgs.obs-studio-plugins; [
         obs-pipewire-audio-capture
+        obs-backgroundremoval
+        obs-mute-filter
         droidcam-obs
         # pkgs.obs-studio-plugins.distroav
       ];
