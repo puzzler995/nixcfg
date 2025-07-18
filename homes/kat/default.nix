@@ -64,7 +64,6 @@
             intellij = true;
             rider = true;
           };
-          obs.enable = true;
         };
       };
     })
