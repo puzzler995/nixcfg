@@ -292,6 +292,26 @@
         "type": "github"
       }
     },
+    "katpkgs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1752945206,
+        "narHash": "sha256-Jtlvsc+/XXTIv/K5DILqlIVL3MjDon8eG+CTGGz306g=",
+        "owner": "puzzler995",
+        "repo": "katpkgs",
+        "rev": "372dcd90635f00dce190adab666251b256423fca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "puzzler995",
+        "repo": "katpkgs",
+        "type": "github"
+      }
+    },
     "lix": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -648,6 +668,7 @@
         "home-manager": "home-manager",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "katpkgs": "katpkgs",
         "lix": "lix",
         "lix-module": "lix-module",
         "microvm": "microvm",

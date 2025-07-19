@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  self,
   ...
 }: {
   options.nixOSManager.programs.obs = {
@@ -10,6 +11,9 @@
   };
 
   config = lib.mkIf config.nixOSManager.programs.obs.enable {
+    environment.systemPackages = with pkgs; [
+        self.inputs.katpkgs.packages.${system}.nightbot-now-playing
+    ];
     programs.obs-studio = {
       enable = true;
       enableVirtualCamera = true;

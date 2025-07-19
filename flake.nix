@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    katpkgs = {
+      url = "github:puzzler995/katpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     lix = {
       url = "git+https://git.lix.systems/lix-project/lix.git";
       #url = "git+https://git.lix.systems/lix-project/lix.git?ref=release-2.93";
