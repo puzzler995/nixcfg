@@ -15,6 +15,10 @@
         self.inputs.katpkgs.packages.${system}.nightbot-now-playing
         self.inputs.katpkgs.packages.${system}.touch-portal
     ];
+    networking.firewall = {
+      allowedUDPPorts = [12135];
+      allowedTCPPorts = [12135];
+    };
     programs.obs-studio = {
       enable = true;
       enableVirtualCamera = true;
