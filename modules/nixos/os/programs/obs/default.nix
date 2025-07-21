@@ -11,8 +11,9 @@
   };
 
   config = lib.mkIf config.nixOSManager.programs.obs.enable {
-    environment.systemPackages = with pkgs; [
-        self.inputs.katpkgs.packages.${system}.nightbot-now-playing
+    environment.systemPackages = with self.inputs.katpkgs.packages.${system}; [
+        nightbot-now-playing
+        touch-portal
     ];
     programs.obs-studio = {
       enable = true;
@@ -25,6 +26,7 @@
         obs-backgroundremoval
         obs-mute-filter
         droidcam-obs
+        obs-websocket
         # pkgs.obs-studio-plugins.distroav
       ];
     };
