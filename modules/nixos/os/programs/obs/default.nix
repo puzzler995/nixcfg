@@ -11,9 +11,9 @@
   };
 
   config = lib.mkIf config.nixOSManager.programs.obs.enable {
-    environment.systemPackages = with self.inputs.katpkgs; [
-        packages.${system}.nightbot-now-playing
-        packages.${system}.touch-portal
+    environment.systemPackages = with pkgs; [
+        self.inputs.katpkgs.packages.${system}.nightbot-now-playing
+        self.inputs.katpkgs.packages.${system}.touch-portal
     ];
     programs.obs-studio = {
       enable = true;
