@@ -113,9 +113,6 @@
       "solarsystem"
       "attlerock"
     ];
-    pinnedArchipelago = final: prev: {
-      racket = ;
-    };
     overlays = [
       self.inputs.nix-alien.overlays.default
       self.inputs.nix-vscode-extensions.overlays.default
