@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    pinnedArchipelagoVersion.url = "github:NixOS/nixpkgs/e6f23dc08d3624daab7094b701aa3954923c6bbb";
 
     # Nix Formatter
     alejandra = {
@@ -112,6 +113,9 @@
       "solarsystem"
       "attlerock"
     ];
+    pinnedArchipelago = final: prev: {
+      racket = ;
+    };
     overlays = [
       self.inputs.nix-alien.overlays.default
       self.inputs.nix-vscode-extensions.overlays.default
@@ -119,6 +123,7 @@
       self.overlays.default
       self.overlays._2ship2harkinian
       self.overlays.sm64ex
+      self.overlays.archipelago
     ];
   in {
     darwinConfigurations = {

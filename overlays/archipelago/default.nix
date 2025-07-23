@@ -1,5 +1,3 @@
 {...}: self: super: {
-  archipelago = super.archipelago.overrideAttrs (prev: rec {
-    version = "0.6.1";
-  });
+  archipelago = self.inputs.pinnedArchipelagoVersion.legacyPackages.${prev.system}.archipelago;
 }
