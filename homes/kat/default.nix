@@ -25,7 +25,6 @@
           ghostty.enable = true;
           git.enable = true;
           vesktop.enable = true;
-          vscode.enable = true;
         };
       };
 
@@ -59,6 +58,7 @@
           archipelago.enable = true;
         };
         programs = {
+          vscode.enable = true;
           jetbrains = {
             enable = false;
             intellij = true;
