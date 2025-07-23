@@ -113,6 +113,9 @@
       "solarsystem"
       "attlerock"
     ];
+    pinnedArchipelago = final: prev: {
+      archipelago = pinnedArchipelagoVersion.legacyPackages.${prev.system}.archipelago;
+    };
     overlays = [
       self.inputs.nix-alien.overlays.default
       self.inputs.nix-vscode-extensions.overlays.default
@@ -120,7 +123,7 @@
       self.overlays.default
       self.overlays._2ship2harkinian
       self.overlays.sm64ex
-      self.overlays.archipelago
+      pinnedArchipelago
     ];
   in {
     darwinConfigurations = {
@@ -283,6 +286,5 @@
     overlays.default = import ./overlays/default.nix {inherit self;};
     overlays._2ship2harkinian = import ./overlays/_2ship2harkinian/default.nix {inherit self;};
     overlays.sm64ex = import ./overlays/sm64ex/default.nix {inherit self;};
-    overlays.archipelago = import ./overlays/archipelago/default.nix {inherit self;};
   };
 }
