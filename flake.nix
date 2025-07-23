@@ -286,6 +286,6 @@
     overlays.default = import ./overlays/default.nix {inherit self;};
     overlays._2ship2harkinian = import ./overlays/_2ship2harkinian/default.nix {inherit self;};
     overlays.sm64ex = import ./overlays/sm64ex/default.nix {inherit self;};
-    overlays.archipelago = imports ./overlays/archipelago/default.nix {inherit self;};
+    overlays.archipelago = import ./overlays/archipelago/default.nix {inherit self;};
   };
 }
