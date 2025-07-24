@@ -3,5 +3,6 @@
     ./tailscale
     ./gdm
     ./sddm
+    ./cosmic-greeter
   ];
 }

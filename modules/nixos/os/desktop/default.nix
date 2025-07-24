@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./gnome
+    ./cosmic
   ];
 
   options.nixOSManager.desktop.enable = lib.mkOption {
