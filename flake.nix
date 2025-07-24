@@ -245,9 +245,6 @@
 
         specialArgs = {
           inherit self;
-          # flake = {
-          #   nixosModules = self.nixosModules;
-          # };
         };
       };
       attlerock = self.inputs.nixpkgs.lib.nixosSystem {
