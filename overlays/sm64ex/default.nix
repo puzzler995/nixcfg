@@ -1,4 +1,4 @@
-{...}: self: super: {
+_: self: super: {
   sm64ex = super.sm64ex.overrideAttrs (prev: rec {
     name = "sm64ex";
     version = "git";

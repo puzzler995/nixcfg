@@ -4,8 +4,7 @@
   pkgs,
   lib,
   ...
-}: 
-  {
+}: {
   imports = [
     ./home.nix
     ./secrets.nix

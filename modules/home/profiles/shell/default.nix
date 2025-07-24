@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ...}:{
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options.homeManager.profiles.shell.enable = lib.mkEnableOption "basic shell setup";
 
   config = lib.mkIf config.homeManager.profiles.shell.enable {
@@ -16,7 +21,7 @@
       bat.enable = true;
 
       bottom.enable = true;
-      
+
       direnv = {
         enable = true;
         nix-direnv.enable = true;

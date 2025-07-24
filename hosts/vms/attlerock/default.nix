@@ -1,13 +1,17 @@
-{config, self, pkgs, lib, ...}: {
-
-
+{
+  config,
+  self,
+  pkgs,
+  lib,
+  ...
+}: {
   microvm = {
     hypervisor = "qemu";
     interfaces = [
       {
         type = "tap";
         id = "vm-test1";
-        mac ="02:00:00:00:00:01";
+        mac = "02:00:00:00:00:01";
       }
     ];
     shares = [
@@ -29,12 +33,12 @@
 
   systemd.user.services.my-cool-user-service = {
     enable = true;
-    after = [ "network.target" ];
-    wantedBy = [ "default.target" ];
+    after = ["network.target"];
+    wantedBy = ["default.target"];
     description = "Output Network Config";
     serviceConfig = {
-        Type = "simple";
-        ExecStart = ''ip a'';
+      Type = "simple";
+      ExecStart = ''ip a'';
     };
   };
 
@@ -61,7 +65,6 @@
   };
 
   nixOSManager = {
-
     profiles = {
       autoUpgrade.enable = true;
       common.enable = true;

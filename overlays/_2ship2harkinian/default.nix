@@ -1,4 +1,4 @@
-{...}: self: super: {
+_: self: super: {
   _2ship2harkinian = super._2ship2harkinian.overrideAttrs (old: rec {
     name = "2ship2harkinian";
     version = "git";

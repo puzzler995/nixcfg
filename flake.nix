@@ -114,7 +114,7 @@
       "attlerock"
     ];
     pinnedArchipelago = final: prev: {
-      archipelago = self.inputs.pinnedArchipelagoVersion.legacyPackages.${prev.system}.archipelago;
+      inherit (self.inputs.pinnedArchipelagoVersion.legacyPackages.${prev.system}) archipelago;
     };
     overlays = [
       self.inputs.nix-alien.overlays.default
@@ -280,8 +280,10 @@
       };
     };
 
-    overlays.default = import ./overlays/default.nix {inherit self;};
-    overlays._2ship2harkinian = import ./overlays/_2ship2harkinian/default.nix {inherit self;};
-    overlays.sm64ex = import ./overlays/sm64ex/default.nix {inherit self;};
+    overlays = {
+      default = import ./overlays/default.nix {inherit self;};
+      _2ship2harkinian = import ./overlays/_2ship2harkinian/default.nix {inherit self;};
+      sm64ex = import ./overlays/sm64ex/default.nix {inherit self;};
+    };
   };
 }

@@ -12,8 +12,8 @@
 
   config = lib.mkIf config.nixOSManager.programs.obs.enable {
     environment.systemPackages = with pkgs; [
-        self.inputs.katpkgs.packages.${system}.nightbot-now-playing
-        self.inputs.katpkgs.packages.${system}.touch-portal
+      self.inputs.katpkgs.packages.${system}.nightbot-now-playing
+      self.inputs.katpkgs.packages.${system}.touch-portal
     ];
     networking.firewall = {
       allowedUDPPorts = [12135];

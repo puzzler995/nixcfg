@@ -48,7 +48,7 @@
         #retroarch-full
         shipwright
         #sm64ex
-      #_2ship2harkinian
+        #_2ship2harkinian
         tenacity
       ];
 

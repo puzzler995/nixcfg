@@ -1,6 +1,8 @@
 {self, ...}: {
   home-manager.users.kat = {
-    config, lib, ...
+    config,
+    lib,
+    ...
   }: {
     imports = [
       self.homeManagerModules.kat

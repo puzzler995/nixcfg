@@ -1,3 +1,3 @@
-{...}: self: super: {
-  archipelago = self.inputs.pinnedArchipelagoVersion.legacyPackages.${self.system}.archipelago;
+_: self: super: {
+  inherit (self.inputs.pinnedArchipelagoVersion.legacyPackages.${self.system}) archipelago;
 }
