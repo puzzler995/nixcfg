@@ -76,6 +76,10 @@
 
     services = {
       tailscale.enable = true;
+      gdm = {
+        enable = true;
+        autoLogin = "kat";
+      };
     };
   };
 }
