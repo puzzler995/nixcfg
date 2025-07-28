@@ -52,7 +52,7 @@
   };
 
   nixOSManager = {
-    desktop.gnome.enable = true;
+    desktop.cosmic.enable = true;
 
     profiles = {
       autoUpgrade.enable = true;
@@ -75,7 +75,7 @@
 
     services = {
       tailscale.enable = true;
-      gdm = {
+      cosmic-greeter = {
         enable = true;
         autoLogin = "kat";
       };
