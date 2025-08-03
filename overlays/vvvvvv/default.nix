@@ -5,9 +5,16 @@ _: self: super: {
     src = super.fetchFromGitHub {
       owner = "N00byKing";
       repo = "VVVVVV";
-      rev = "AP0.5.1-2";
-      hash = "sha256-8gEsQca4lwRX2dDNFD+QlwZIVwLWIqaR2n3N+jd7yLE=";
+      rev = "archipelago";
+      hash = "sha256-v7V/1HgT+jYjzbasvoZbJRylC3HjdWeJVtdP1Bsh5bs=";
       fetchSubmodules = true;
     };
+    buildInputs = [
+      super.faudio
+      super.physfs
+      super.SDL2
+      super.tinyxml-2
+      super.openssl
+    ];
   });
 }

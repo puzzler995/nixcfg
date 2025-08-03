@@ -123,6 +123,7 @@
       self.overlays.default
       self.overlays._2ship2harkinian
       self.overlays.sm64ex
+      self.overlays.vvvvvv
       pinnedArchipelago
     ];
   in {
