@@ -284,6 +284,7 @@
       default = import ./overlays/default.nix {inherit self;};
       _2ship2harkinian = import ./overlays/_2ship2harkinian/default.nix {inherit self;};
       sm64ex = import ./overlays/sm64ex/default.nix {inherit self;};
+      vvvvvv = import ./overlays/vvvvvv/default.nix {inherit self;};
     };
   };
 }

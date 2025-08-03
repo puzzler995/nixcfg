@@ -54,6 +54,7 @@
         tenacity
         xivlauncher
         fflogs
+        vvvvvv
       ];
 
       homeManager = {
