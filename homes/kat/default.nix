@@ -40,6 +40,7 @@
       home.packages = with pkgs; [
         bitwarden-desktop
         bolt-launcher
+        cider-2
         #dolphin-emu
         itch
         nexusmods-app-unfree
@@ -48,6 +49,7 @@
         #retroarch-full
         shipwright
         #sm64ex
+        spotify
         #_2ship2harkinian
         tenacity
         xivlauncher
