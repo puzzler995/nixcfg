@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   options.nixOSManager.programs.nix.enable = lib.mkEnableOption "My Main Nix Config";
@@ -29,6 +30,10 @@
         experimental-features = ["nix-command" "flakes"];
       };
     };
+
+    environment.systemPackages = [
+      pkgs.nix-output-monitor
+    ];
 
     programs = {
       nix-ld.enable = true;
