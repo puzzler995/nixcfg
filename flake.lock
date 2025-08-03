@@ -299,11 +299,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753140463,
-        "narHash": "sha256-MGU2ebCmNo5p0bygr3Uxmfij7rfjOqzP2Xz2xYdZHO4=",
+        "lastModified": 1754259982,
+        "narHash": "sha256-JnhwYAlduuT463SOOjSnD/6i9Z/WMx6QkAy1qU8jSP8=",
         "owner": "puzzler995",
         "repo": "katpkgs",
-        "rev": "a93e5c31f3316dd08f1febe134e890e3438a368b",
+        "rev": "c51cf50e749776d8cd5cf59c2b39f6e8909c519c",
         "type": "github"
       },
       "original": {

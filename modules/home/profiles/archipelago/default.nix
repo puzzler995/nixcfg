@@ -10,6 +10,7 @@
     home.packages = with pkgs; [
       archipelago
       poptracker
+      self.inputs.katpkgs.packages.${system}.autopelago
       # self.inputs.bizhawk.packages.x86_64-linux.emuhawk-2_9_1
     ];
   };
