@@ -31,7 +31,7 @@
         obs-mute-filter
         droidcam-obs
         obs-websocket
-        # pkgs.obs-studio-plugins.distroav
+        distroav
       ];
     };
   };
