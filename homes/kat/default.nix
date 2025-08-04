@@ -48,13 +48,11 @@
         owmods-gui
         #retroarch-full
         shipwright
-        (lib.hiPrio sm64ex)
         spotify
         #_2ship2harkinian
         tenacity
         xivlauncher
         fflogs
-        vvvvvv
       ];
 
       homeManager = {

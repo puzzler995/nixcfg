@@ -11,6 +11,8 @@
       archipelago
       poptracker
       self.inputs.katpkgs.packages.${system}.autopelago
+      (lib.hiPrio sm64ex)
+      vvvvvv
       # self.inputs.bizhawk.packages.x86_64-linux.emuhawk-2_9_1
     ];
   };
