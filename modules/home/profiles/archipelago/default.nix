@@ -20,7 +20,7 @@ in {
       self.inputs.katpkgs.packages.${system}.autopelago
       (lib.hiPrio sm64ex)
       vvvvvv
-      bizhawk.emuhawk-2_9_1
+      bizhawk.emuhawk-2_9_1-bin
     ];
   };
 }
