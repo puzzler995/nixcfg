@@ -296,14 +296,15 @@
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
-        ]
+        ],
+        "v6data": "v6data"
       },
       "locked": {
-        "lastModified": 1754262312,
-        "narHash": "sha256-x8bjsYcUVd15zYV+05V5c7y+YaqLa4rBwL75WmjwHbQ=",
+        "lastModified": 1754332351,
+        "narHash": "sha256-rE4QF0lMMLldWdbtlkLjTXZQeMZUmN2zVJR/zgZH4/w=",
         "owner": "puzzler995",
         "repo": "katpkgs",
-        "rev": "bec542bc64053078b0e2b9db1d37559fc9a68e3b",
+        "rev": "5aaf1285b14ea3790bfa971f45184b31a53cfc31",
         "type": "github"
       },
       "original": {
@@ -794,6 +795,19 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "v6data": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750819490,
+        "narHash": "sha256-3k+l+kp/wbMKLXlnd8zJjYpg54XSLMKRLKOKP6nQhFQ=",
+        "path": "/home/kat/.local/share/Steam/steamapps/common/vvvvvv/data.zip",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/kat/.local/share/Steam/steamapps/common/vvvvvv/data.zip",
+        "type": "path"
       }
     }
   },

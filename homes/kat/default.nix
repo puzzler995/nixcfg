@@ -48,7 +48,7 @@
         owmods-gui
         #retroarch-full
         shipwright
-        #sm64ex
+        (lib.hiPrio sm64ex)
         spotify
         #_2ship2harkinian
         tenacity
