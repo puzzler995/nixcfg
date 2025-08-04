@@ -60,14 +60,9 @@
     #--------------------------------------------
     # Non Flake Inputs
 
-    # bizhawk-src = {
-    #   url = "github:TASEmulators/BizHawk";
-    #   flake = false;
-    # };
-    # Temporarily jumping to the flake someone made
-    bizhawk = {
-      url = "github:SignalWalker/BizHawk";
-      inputs.nixpkgs.follows = "nixpkgs";
+    bizhawk-src = {
+      url = "github:TASEmulators/BizHawk";
+      flake = false;
     };
 
     homebrew-core = {

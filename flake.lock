@@ -23,22 +23,18 @@
         "type": "github"
       }
     },
-    "bizhawk": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
+    "bizhawk-src": {
+      "flake": false,
       "locked": {
-        "lastModified": 1748035151,
-        "narHash": "sha256-0hGJLx7DcjrxSJTY4aZYfS3zSIkg4EzQQdqDiQUoCsA=",
-        "owner": "SignalWalker",
+        "lastModified": 1754259308,
+        "narHash": "sha256-rGiW8r3osNnMnHWU5i8xYENXb15Hqr2v0TK1maQS/xE=",
+        "owner": "TASEmulators",
         "repo": "BizHawk",
-        "rev": "dfbd82e3dd4e982c01581615272f8b6bfeb0f051",
+        "rev": "a707d3c6dc6a4697cf79661456ba0eb362492581",
         "type": "github"
       },
       "original": {
-        "owner": "SignalWalker",
+        "owner": "TASEmulators",
         "repo": "BizHawk",
         "type": "github"
       }
@@ -541,7 +537,7 @@
     "root": {
       "inputs": {
         "alejandra": "alejandra",
-        "bizhawk": "bizhawk",
+        "bizhawk-src": "bizhawk-src",
         "disko": "disko",
         "home-manager": "home-manager",
         "homebrew-cask": "homebrew-cask",
