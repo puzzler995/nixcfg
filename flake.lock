@@ -280,11 +280,11 @@
         "v6data": "v6data"
       },
       "locked": {
-        "lastModified": 1754616529,
-        "narHash": "sha256-i2dVvogMxDqHQCaqySgPbXnSEXuEumGU5UIYFuVU1AE=",
+        "lastModified": 1754694634,
+        "narHash": "sha256-Zc/YCVORIVR12G198XDpxB7Z2mcmszFs8iz3x0gVU+w=",
         "owner": "puzzler995",
         "repo": "katpkgs",
-        "rev": "dc97e1ec412811b9f12b3e9543f420b268bca7ab",
+        "rev": "7e9be42260b2a03fd22b51608c8845461caf9144",
         "type": "github"
       },
       "original": {
