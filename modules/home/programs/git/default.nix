@@ -20,5 +20,8 @@
         push.autoSetupRemote = true;
       };
     };
+    home.packages = with pkgs; [
+      lazygit
+    ];
   };
 }
