@@ -38,6 +38,7 @@
       (greedy "fork")
       (greedy "itch")
       (greedy "obsidian")
+      (greedy "vesktop")
       (greedy "visual-studio-code")
     ];
 
