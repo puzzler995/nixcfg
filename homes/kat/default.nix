@@ -48,6 +48,7 @@
         owmods-gui
         #retroarch-full
         shipwright
+        signal-desktop
         spotify
         #_2ship2harkinian
         tenacity
