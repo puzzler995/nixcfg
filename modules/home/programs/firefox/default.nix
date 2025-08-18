@@ -24,7 +24,7 @@ in {
               consent-o-matic
               enhanced-github
               enhancer-for-nebula
-              enhancer-for-youtube
+              improved-tube
               indie-wiki-buddy
               languagetool
               pronoundb
