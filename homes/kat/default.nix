@@ -40,13 +40,24 @@
       home.packages = with pkgs; [
         bitwarden-desktop
         bolt-launcher
+        (calibre.override {
+          unrarSupport = true;
+        })
         cider-2
-        #dolphin-emu
+        dolphin-emu
         itch
         nexusmods-app-unfree
         openrct2
         owmods-gui
-        #retroarch-full
+        (retroarch.withCores (cores: with cores; [
+          snes9x
+          sameboy
+          citra
+          desmume
+          gambatte
+          mgba
+          ppsspp
+        ]))
         shipwright
         signal-desktop
         spotify
