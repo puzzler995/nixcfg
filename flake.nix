@@ -48,6 +48,8 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    nix-jetbrains-plugins.url = "github:theCapypara/nix-jetbrains-plugins";
+
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     nur = {

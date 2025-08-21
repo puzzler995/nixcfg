@@ -75,9 +75,10 @@
           vesktop.enable = true;
           vscode.enable = true;
           jetbrains = {
-            enable = false;
+            enable = true;
             intellij = true;
             rider = true;
+            webstorm = true;
           };
         };
       };

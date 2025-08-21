@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  self,
   ...
 }: let
   commonPlugins = [
@@ -19,7 +20,6 @@
     "mario-progress-bar"
     "codeglance-pro"
     "better-direnv"
-    "continue"
   ];
   intellijPlugins = ["maven-helper"] ++ commonPlugins;
 in {
