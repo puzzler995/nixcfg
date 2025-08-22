@@ -52,7 +52,7 @@
   };
 
   nixOSManager = {
-    desktop.gnome.enable = true;
+    desktop.kde.enable = true;
 
     profiles = {
       autoUpgrade.enable = true;
@@ -75,9 +75,9 @@
 
     services = {
       tailscale.enable = true;
-      gdm = {
+      sddm = {
         enable = true;
-        autoLogin = "kat";
+        # autoLogin = "kat";
       };
     };
   };
