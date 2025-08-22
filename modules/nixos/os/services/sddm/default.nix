@@ -27,7 +27,14 @@
           user = config.nixOSManager.services.sddm.autoLogin;
         };
 
-        sddm.enable = true;
+        sddm = {
+          enable = true;
+
+          wayland = {
+            enable = true;
+            compositor = "kwin";
+          };
+        };
       };
     };
   };
