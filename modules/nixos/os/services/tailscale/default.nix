@@ -29,13 +29,23 @@
       }
     ];
 
-    home-manager.sharedModules = [
-      {
-        #programs.gnome-shell.extensions = [
-          # {package = pkgs.gnomeExtensions.tailscale-qs;}
-        #];
-      }
-    ];
+    lib.mkIf config.nixOSManager.desktop.gnome.enable {
+      home-manager.sharedModules = [
+        {
+          programs.gnome-shell.extensions = [
+            {
+              package = pkgs.gnomeExtensions.tailscale-qs;
+            }
+          ];
+        }
+      ]
+    };
+
+    lib.mkIf config.nixOSManager.desktop.kde.enable {
+      environment.systemPackages = with pkgs; [
+        tail-tray
+      ];
+    };
 
     networking.firewall = {
       allowedUDPPorts = [config.services.tailscale.port];
