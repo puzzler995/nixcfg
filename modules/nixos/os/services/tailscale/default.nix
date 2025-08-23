@@ -29,8 +29,8 @@
       }
     ];
 
-    lib.mkIf config.nixOSManager.desktop.gnome.enable {
-      home-manager.sharedModules = [
+    home-manager = lib.mkIf config.nixOSManager.desktop.gnome.enable {
+      sharedModules = [
         {
           programs.gnome-shell.extensions = [
             {
@@ -38,11 +38,10 @@
             }
           ];
         }
-      ]
+      ];
     };
-
-    lib.mkIf config.nixOSManager.desktop.kde.enable {
-      environment.systemPackages = with pkgs; [
+    environment = lib.mkIf config.nixOSManager.desktop.kde.enable {
+      systemPackages = with pkgs; [
         tail-tray
       ];
     };

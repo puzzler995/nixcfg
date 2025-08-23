@@ -116,6 +116,7 @@
       self.inputs.nur.overlays.default
       self.overlays.default
       self.overlays._2ship2harkinian
+      self.overlays.natron
       pinnedArchipelago
     ];
   in {
@@ -230,6 +231,7 @@
             nixpkgs = {
               inherit overlays;
               config.allowUnfree = true;
+              config.allowBroken = true;
             };
 
             sops.defaultSopsFile = ./secrets/secrets.yaml;
@@ -276,6 +278,7 @@
     overlays = {
       default = import ./overlays/default.nix {inherit self;};
       _2ship2harkinian = import ./overlays/_2ship2harkinian/default.nix {inherit self;};
+      natron = import ./overlays/natron/default.nix {inherit self;};
     };
   };
 }
