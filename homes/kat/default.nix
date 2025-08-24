@@ -47,7 +47,6 @@
         dolphin-emu
         inkscape-with-extensions
         itch
-        natron
         nexusmods-app-unfree
         openrct2
         owmods-gui
@@ -67,6 +66,7 @@
         tenacity
         xivlauncher
         fflogs
+        vlc
       ];
 
       homeManager = {

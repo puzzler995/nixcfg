@@ -301,11 +301,11 @@
         "v6data": "v6data"
       },
       "locked": {
-        "lastModified": 1754695740,
-        "narHash": "sha256-PZSgRFL30lJTG7jZiTSqDqOs2IJS9bzxggSU/w0e8R8=",
+        "lastModified": 1755919141,
+        "narHash": "sha256-+8A5SN5J6+NGR21KaIxT1FHuZ5QnuiC2SMqYSvi3rT4=",
         "owner": "puzzler995",
         "repo": "katpkgs",
-        "rev": "fc12c1c01545959dcc3dc500b8aff745f4890f45",
+        "rev": "e1d7addd97569eea8a8467ab30f6f46597d40fc1",
         "type": "github"
       },
       "original": {
