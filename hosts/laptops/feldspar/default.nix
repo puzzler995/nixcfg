@@ -76,7 +76,7 @@
     defaults = {
       NSGlobalDomain = {
         "com.apple.swipescrolldirection" = false;
-      }
+      };
     };
     primaryUser = "kat";
     stateVersion = 6;
