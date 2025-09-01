@@ -73,6 +73,11 @@
   nixpkgs.hostPlatform = "x86_64-darwin";
 
   system = {
+    defaults = {
+      NSGlobalDomain = {
+        "com.apple.swipescrolldirection" = false;
+      }
+    };
     primaryUser = "kat";
     stateVersion = 6;
   };
