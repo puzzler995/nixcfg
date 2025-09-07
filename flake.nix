@@ -109,6 +109,7 @@
       inherit (self.inputs.pinnedArchipelagoVersion.legacyPackages.${prev.system}) archipelago;
     };
     overlays = [
+      self.inputs.katpkgs.overlays._2ship2harkinian
       self.inputs.katpkgs.overlays.sm64ex
       self.inputs.katpkgs.overlays.vvvvvv
       self.inputs.katpkgs.overlays.natron
@@ -116,7 +117,6 @@
       self.inputs.nix-vscode-extensions.overlays.default
       self.inputs.nur.overlays.default
       self.overlays.default
-      self.overlays._2ship2harkinian
       pinnedArchipelago
     ];
   in {
@@ -277,7 +277,6 @@
 
     overlays = {
       default = import ./overlays/default.nix {inherit self;};
-      _2ship2harkinian = import ./overlays/_2ship2harkinian/default.nix {inherit self;};
     };
   };
 }

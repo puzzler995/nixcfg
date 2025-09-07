@@ -65,7 +65,7 @@
         shipwright
         signal-desktop
         spotify
-        #_2ship2harkinian
+        _2ship2harkinian
         tenacity
         xivlauncher
         fflogs
