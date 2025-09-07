@@ -49,6 +49,7 @@
         inkscape-with-extensions
         itch
         nexusmods-app-unfree
+        nil
         openrct2
         owmods-gui
         (retroarch.withCores (cores: with cores; [
@@ -60,6 +61,7 @@
           mgba
           ppsspp
         ]))
+        rpcs3
         shipwright
         signal-desktop
         spotify
@@ -68,6 +70,8 @@
         xivlauncher
         fflogs
         vlc
+        temurin-bin-24
+        yaml-language-server
       ];
 
       homeManager = {
