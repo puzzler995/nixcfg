@@ -104,14 +104,14 @@
       inherit (self.inputs.pinnedArchipelagoVersion.legacyPackages.${prev.system}) archipelago;
     };
     overlays = [
-      (final: prev: {
-        inherit (final.lixPackageSets.stable)
-          nixpkgs-review
-          nix-direnv
-          nix-eval-jobs
-          nix-fast-build
-          colmena;
-      })
+      # (final: prev: {
+      #   inherit (final.lixPackageSets.stable)
+      #     nixpkgs-review
+      #     nix-direnv
+      #     nix-eval-jobs
+      #     nix-fast-build
+      #     colmena;
+      # })
       self.inputs.katpkgs.overlays._2ship2harkinian
       self.inputs.katpkgs.overlays.sm64ex
       self.inputs.katpkgs.overlays.vvvvvv
