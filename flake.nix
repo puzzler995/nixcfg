@@ -26,11 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.3-1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     microvm = {
       url = "github:astro/microvm.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -109,6 +104,14 @@
       inherit (self.inputs.pinnedArchipelagoVersion.legacyPackages.${prev.system}) archipelago;
     };
     overlays = [
+      (final: prev: {
+        inherit (final.lixPackageSets.stable)
+          nixpkgs-review
+          nix-direnv
+          nix-eval-jobs
+          nix-fast-build
+          colmena;
+      })
       self.inputs.katpkgs.overlays._2ship2harkinian
       self.inputs.katpkgs.overlays.sm64ex
       self.inputs.katpkgs.overlays.vvvvvv
@@ -126,7 +129,6 @@
           ./hosts/laptops/feldspar
           self.darwinModules.default
           self.inputs.home-manager.darwinModules.home-manager
-          self.inputs.lix-module.nixosModules.lixFromNixpkgs
           self.inputs.nix-homebrew.darwinModules.nix-homebrew
           self.inputs.sops-nix.darwinModules.default
           {
@@ -184,7 +186,6 @@
           ./hosts/servers/solarsystem
           self.inputs.disko.nixosModules.disko
           self.inputs.home-manager.nixosModules.home-manager
-          self.inputs.lix-module.nixosModules.lixFromNixpkgs
           self.inputs.microvm.nixosModules.host
           self.inputs.sops-nix.nixosModules.sops
           self.nixosModules.nixos
@@ -215,7 +216,6 @@
 
           self.inputs.disko.nixosModules.disko
           self.inputs.home-manager.nixosModules.home-manager
-          self.inputs.lix-module.nixosModules.lixFromNixpkgs
           self.inputs.sops-nix.nixosModules.sops
           self.nixosModules.nixos
           self.nixosModules.users
@@ -253,7 +253,6 @@
           ./hosts/vms/attlerock
           self.inputs.microvm.nixosModules.microvm
           self.inputs.home-manager.nixosModules.home-manager
-          self.inputs.lix-module.nixosModules.lixFromNixpkgs
           self.inputs.sops-nix.nixosModules.sops
           self.nixosModules.nixos
           self.nixosModules.users

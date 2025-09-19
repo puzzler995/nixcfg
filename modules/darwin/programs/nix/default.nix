@@ -13,6 +13,8 @@
         interval = [{Hour = 12;}];
       };
 
+      package = pkgs.lixPackageSets.stable.lix;
+
       settings = {
         trusted-users = ["@admin"];
         experimental-features = ["nix-command" "flakes"];

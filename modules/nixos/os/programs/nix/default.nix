@@ -20,6 +20,8 @@
         max-free = ${toString (5 * 1024 * 1024 * 1024)}   # 5 GiB
       '';
 
+      package = pkgs.lixPackageSets.stable.lix;
+
       optimise = {
         automatic = true;
         persistent = true;
