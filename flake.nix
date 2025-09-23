@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    firebot = {
+      url = "git+https://codeberg.org/ky-bean/firebot.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -215,6 +220,7 @@
           ./hosts/desktops/timberhearth
 
           self.inputs.disko.nixosModules.disko
+          self.inputs.firebot.nixosModules.default
           self.inputs.home-manager.nixosModules.home-manager
           self.inputs.sops-nix.nixosModules.sops
           self.nixosModules.nixos
