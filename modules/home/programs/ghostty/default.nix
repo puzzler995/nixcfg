@@ -8,7 +8,7 @@
   config = lib.mkIf config.homeManager.programs.ghostty.enable {
     programs.ghostty = {
       enable = true;
-      package = lib.mkIf pkgs.stdenv.isDarwin null;
+      package = lib.mkIf pkgs.stdenv.isDarwin pkgs.ghostty-bin;
       settings = {
         app-notifications = "no-clipboard-copy";
         copy-on-select = "clipboard";

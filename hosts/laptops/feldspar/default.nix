@@ -34,11 +34,10 @@
       };
     in [
       (greedy "bitwarden")
-      (greedy "ghostty")
+      (greedy "firefox")
       (greedy "fork")
       (greedy "itch")
       (greedy "obsidian")
-      (greedy "vesktop")
       (greedy "visual-studio-code")
     ];
 
@@ -74,6 +73,19 @@
 
   system = {
     defaults = {
+      dock = {
+        persistent-apps = [
+          {app = "/Applications/Firefox.app";}
+          {app = "${pkgs.vesktop}/Applications/Vesktop.app";}
+          {app = "${pkgs.ghostty-bin}/Applications/Ghostty.app";}
+          {app = "/Applications/Visual Studio Code.app";}
+          {
+            spacer = {
+              small = true;
+            };
+          }
+        ];
+      };
       NSGlobalDomain = {
         "com.apple.swipescrolldirection" = false;
       };

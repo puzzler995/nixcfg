@@ -21,6 +21,7 @@
           shell.enable = true;
         };
         programs = {
+          vesktop.enable = true;
           firefox.enable = true;
           ghostty.enable = true;
           git.enable = true;
@@ -79,7 +80,6 @@
           archipelago.enable = true;
         };
         programs = {
-          vesktop.enable = true;
           vscode.enable = true;
           jetbrains = {
             enable = true;
