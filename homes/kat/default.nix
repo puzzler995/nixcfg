@@ -73,6 +73,7 @@
         vlc
         temurin-bin-24
         yaml-language-server
+        protonup-qt
       ];
 
       homeManager = {
